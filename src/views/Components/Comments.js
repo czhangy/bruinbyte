@@ -16,4 +16,3 @@ class Comments extends Component {
 }
 
 export default Comments;
-0 comments on commit c55469b
