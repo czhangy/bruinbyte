@@ -28,8 +28,8 @@ ReactDOM.render(
         <Route path="/login-page" component={LoginPage} />
         <Route path="/" component={Components} />
       </Switch>
-        </Router>
-        <LoginButton />
+    </Router>
+    <LoginButton />
   </Auth0Provider>,
   document.getElementById("root")
 );
