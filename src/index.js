@@ -6,7 +6,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import LoginButton from "./assets/jss/material-kit-react/components/loginButton.js";
 
 import "assets/scss/material-kit-react.scss?v=1.9.0";
-
+require('./ably');
 // pages for this product
 import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
