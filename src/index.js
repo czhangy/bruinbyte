@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
-// import LoginButton from "./assets/jss/material-kit-react/components/loginButton.js";
+import LoginButton from "./assets/jss/material-kit-react/components/loginButton.js";
 
 import "assets/scss/material-kit-react.scss?v=1.9.0";
 
@@ -28,7 +28,8 @@ ReactDOM.render(
         <Route path="/login-page" component={LoginPage} />
         <Route path="/" component={Components} />
       </Switch>
-    </Router>
+        </Router>
+        <LoginButton />
   </Auth0Provider>,
   document.getElementById("root")
 );
