@@ -4,9 +4,12 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 import LoginButton from "./assets/jss/material-kit-react/components/loginButton.js";
+import LogoutButton from "./assets/jss/material-kit-react/components/logoutButton.js";
 
 import "assets/scss/material-kit-react.scss?v=1.9.0";
-require('./ably');
+
+// require('./ably');
+
 // pages for this product
 import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
@@ -30,6 +33,7 @@ ReactDOM.render(
       </Switch>
     </Router>
     <LoginButton />
+    <LogoutButton />
   </Auth0Provider>,
   document.getElementById("root")
 );
