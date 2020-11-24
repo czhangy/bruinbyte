@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { Router, Route, Switch } from "react-router-dom";
-import { Auth0Provider } from "@auth0/auth0-react";
-import LoginButton from "./assets/jss/material-kit-react/components/loginButton.js";
-import LogoutButton from "./assets/jss/material-kit-react/components/logoutButton.js";
+import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
+import Auth0ProviderWithHistory from "./auth/auth0ProviderWithHistory";
 
 import "assets/scss/material-kit-react.scss?v=1.9.0";
 
@@ -15,25 +13,27 @@ import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
+import AuthenticationButton from "./components/AuthenticationButton/authenticationButton.js";
 
 var hist = createBrowserHistory();
 
 ReactDOM.render(
-  <Auth0Provider
-    domain="bruinbyte.us.auth0.com"
-    clientId="ZJIcTawo9TVY5NJzEU55DblmrByd7jOj"
-    redirectUri={window.location.origin}
-  >
-    <Router history={hist}>
-      <Switch>
-        <Route path="/landing-page" component={LandingPage} />
-        <Route path="/profile-page" component={ProfilePage} />
-        <Route path="/login-page" component={LoginPage} />
-        <Route path="/" component={Components} />
-      </Switch>
-    </Router>
-    <LoginButton />
-    <LogoutButton />
-  </Auth0Provider>,
+  <BrowserRouter>
+    <Auth0ProviderWithHistory
+      domain="bruinbyte.us.auth0.com"
+      clientId="ZJIcTawo9TVY5NJzEU55DblmrByd7jOj"
+      redirectUri={window.location.origin}
+    >
+      <Router history={hist}>
+        <Switch>
+          <Route path="/landing-page" component={LandingPage} />
+          <Route path="/profile-page" component={ProfilePage} />
+          <Route path="/login-page" component={LoginPage} />
+          <Route path="/" component={Components} />
+        </Switch>
+      </Router>
+      <AuthenticationButton />
+    </Auth0ProviderWithHistory>
+  </BrowserRouter>,
   document.getElementById("root")
 );
