@@ -12,7 +12,7 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-//import { red } from "@material-ui/core/colors";
+import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -21,14 +21,32 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 /////
 ////end card shit
 
-// nodejs library that concatenates classes
-//import classNames from "classnames";
-// react components for routing our app without refresh
-//import { Link } from "react-router-dom";
-// @material-ui/core components
+//////
+////
+/////list stuff
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Divider from "@material-ui/core/Divider";
+import FastfoodIcon from "@material-ui/icons/Fastfood";
+import HomeIcon from "@material-ui/icons/Home";
+// import InboxIcon from "@material-ui/icons/Inbox";
+// import DraftsIcon from "@material-ui/icons/Drafts";
+/// end list stuff
+
+//different list stuff
+//import { makeStyles } from '@material-ui/core/styles';
+//import List from '@material-ui/core/List';
+//import ListItem from '@material-ui/core/ListItem';
+//import Divider from '@material-ui/core/Divider';
+//import ListItemText from '@material-ui/core/ListItemText';
+
+//import Avatar from '@material-ui/core/Avatar';
+//import Typography from '@material-ui/core/Typography';
+//end of different list stuff
+
 import { makeStyles } from "@material-ui/core/styles";
-// @material-ui/icons
-// core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -37,22 +55,30 @@ import GridItem from "components/Grid/GridItem.js";
 import Parallax from "components/Parallax/Parallax.js";
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.js";
-// import SectionBasics from "./Sections/SectionBasics.js";
-// import SectionNavbars from "./Sections/SectionNavbars.js";
-// import SectionTabs from "./Sections/SectionTabs.js";
-// import SectionPills from "./Sections/SectionPills.js";
-// import SectionNotifications from "./Sections/SectionNotifications.js";
-// import SectionTypography from "./Sections/SectionTypography.js";
-// import SectionJavascript from "./Sections/SectionJavascript.js";
-// import SectionCarousel from "./Sections/SectionCarousel.js";
-// import SectionCompletedExamples from "./Sections/SectionCompletedExamples.js";
-// import SectionLogin from "./Sections/SectionLogin.js";
-// import SectionExamples from "./Sections/SectionExamples.js";
-// import SectionDownload from "./Sections/SectionDownload.js";
 
-import styles from "assets/jss/material-kit-react/views/components.js";
+//import styles from "assets/jss/material-kit-react/views/components.js";
 
-const useStyles = makeStyles(styles);
+//const useStyles = makeStyles(styles);
+const useStyles = makeStyles((theme) => ({
+  media: {
+    height: 5,
+    paddingTop: "40%", // 16:9
+  },
+  expand: {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: "rotate(180deg)",
+  },
+  backgroundColor: red,
+  avatar: {
+    backgroundColor: red[500],
+  },
+}));
 
 export default function Components(props) {
   const classes = useStyles();
@@ -65,7 +91,7 @@ export default function Components(props) {
         fixed
         color="transparent"
         changeColorOnScroll={{
-          height: 400,
+          height: 40,
           color: "white",
         }}
         {...rest}
@@ -98,7 +124,7 @@ export default function Components(props) {
               <MoreVertIcon />
             </IconButton>
           }
-          title="this is where comments are gonna go"
+          title="this is comments layout ish? idrk i cant do anything until i have database connection"
           subheader="September 14, 2016 --> data???"
         />
         <CardMedia
@@ -108,7 +134,9 @@ export default function Components(props) {
         />
         <CardContent>
           <Typography variant="body2" color="textSecondary" component="p">
-            not sure whats gonna go here but comment stuff
+            comment stuff is gonna go here/ look like this once the data is all
+            set up im thinking resturant pick/menu/map idrk go above
+            {/* // coments are on a card and are made of a list */}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -119,7 +147,7 @@ export default function Components(props) {
             <ShareIcon />
           </IconButton>
           <IconButton
-          // className={clsx(classes.expand, {
+          // className={clsx(classes.expand, { //this is cool but idk how to make work
           //   [classes.expandOpen]: expanded,
           // })}
           // onClick={handleExpandClick}
@@ -131,36 +159,48 @@ export default function Components(props) {
         </CardActions>
         <Collapse in={true} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>Name?</Typography>
-            <Typography paragraph>first paragraph comment</Typography>
-            <Typography paragraph>second paragraph comment</Typography>
-            <Typography paragraph>third paragraph comment</Typography>
-            <Typography>4th paragraph comment</Typography>
+            <Typography paragraph>ResturantName?</Typography>
+
+            <div className={classes.root}>
+              <List component="nav" aria-label="secondary mailbox folders">
+                <ListItem button>
+                  <ListItemIcon>
+                    <FastfoodIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Name"
+                    secondary="this is where the actual comment goes"
+                  />
+                </ListItem>
+                <ListItem button>
+                  <ListItemIcon>
+                    <FastfoodIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Vicky Delk"
+                    secondary="I had been here before, about 5 years earlier. That said, I loved it then and I love it today. Clearly others do as well as restaurants can close up shop just as quickly as they open. Hopefully this one is around for the foreseeable future.
+
+                  First, you need to know this is an outdoor space regardless of Covid. It's a lovely garden vibe on a paring lot asphalt floor, but that's part of the experience I suppose. It's mixed with great service and the lights of an intimate garden by nightfall. They have umbrellas for shade and heat lamps
+                  for warmth.
+                  
+                  Second, consider one of their cocktails. I always go right for anything with Tequila, but the beer I hear is great also. They serve a popcorn of the day while you wait for your beverage to arrive. Prepare to have your eyes roll back like a shark. It's that good! Tonight's was bacon fat, scallion and fresh black pepper."
+                  />
+                </ListItem>
+              </List>
+              <Divider />
+              <List component="nav" aria-label="secondary mailbox folders">
+                <ListItem button>
+                  <ListItemIcon>
+                    <HomeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Return home or some shit idk (or maybe the add comment button)" />
+                </ListItem>
+              </List>{" "}
+            </div>
           </CardContent>
         </Collapse>
       </Card>
 
-      {/* <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionBasics />
-        <SectionNavbars />
-        <SectionTabs />
-        <SectionPills />
-        <SectionNotifications />
-        <SectionTypography />
-        <SectionJavascript />
-        <SectionCarousel />
-        <SectionCompletedExamples />
-        <SectionLogin />
-        <GridItem md={12} className={classes.textCenter}>
-          <Link to={"/login-page"} className={classes.link}>
-            <Button color="primary" size="lg" simple>
-              View Login Page
-            </Button>
-          </Link>
-        </GridItem>
-        <SectionExamples />
-        <SectionDownload />
-      </div> */}
       <Footer />
     </div>
   );
