@@ -13,9 +13,8 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+//import AddIcon from "@material-ui/icons/Add";
+//import Icon from "@material-ui/core/Icon";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 /////
 /////
@@ -31,20 +30,10 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
 import HomeIcon from "@material-ui/icons/Home";
-// import InboxIcon from "@material-ui/icons/Inbox";
-// import DraftsIcon from "@material-ui/icons/Drafts";
 /// end list stuff
 
-//different list stuff
-//import { makeStyles } from '@material-ui/core/styles';
-//import List from '@material-ui/core/List';
-//import ListItem from '@material-ui/core/ListItem';
-//import Divider from '@material-ui/core/Divider';
-//import ListItemText from '@material-ui/core/ListItemText';
-
-//import Avatar from '@material-ui/core/Avatar';
-//import Typography from '@material-ui/core/Typography';
-//end of different list stuff
+//popover stuff
+import SimplePopover from "components/Commentbox/popover.js";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "components/Header/Header.js";
@@ -60,6 +49,12 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 
 //const useStyles = makeStyles(styles);
 const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+      width: "100",
+    },
+  },
   media: {
     height: 5,
     paddingTop: "40%", // 16:9
@@ -139,27 +134,15 @@ export default function Components(props) {
             {/* // coments are on a card and are made of a list */}
           </Typography>
         </CardContent>
+        <Typography component="p">ResturantName?</Typography>
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-          <IconButton
-          // className={clsx(classes.expand, { //this is cool but idk how to make work
-          //   [classes.expandOpen]: expanded,
-          // })}
-          // onClick={handleExpandClick}
-          // aria-expanded={expanded}
-          // aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
+          <Typography variant="srOnly">Create a user</Typography>
+
+          <SimplePopover />
         </CardActions>
         <Collapse in={true} timeout="auto" unmountOnExit>
           <CardContent>
-            <Typography paragraph>ResturantName?</Typography>
+            {/* <Typography paragraph>ResturantName?</Typography> */}
 
             <div className={classes.root}>
               <List component="nav" aria-label="secondary mailbox folders">
