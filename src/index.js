@@ -14,6 +14,7 @@ import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
 import AuthenticationButton from "./components/AuthenticationButton/authenticationButton.js";
+import StarRatings from "../node_modules/react-star-ratings";
 
 var hist = createBrowserHistory();
 
@@ -33,6 +34,7 @@ ReactDOM.render(
         </Switch>
       </Router>
       <AuthenticationButton />
+      <StarRatings />
     </Auth0ProviderWithHistory>
   </BrowserRouter>,
   document.getElementById("root")
