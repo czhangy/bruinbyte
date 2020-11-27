@@ -1,8 +1,8 @@
 import React from "react";
 
 //card
-import CommentCard from "components/Commentbox/CommentCard";
-import SearchBar from "components/Commentbox/SearchBar";
+import CommentCard from "components/CommentBox/CommentCard";
+import SearchBar from "components/CommentBox/SearchBar";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "components/Header/Header.js";

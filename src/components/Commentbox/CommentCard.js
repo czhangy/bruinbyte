@@ -1,6 +1,6 @@
 import React from "react";
 
-////card shit
+////card stuff
 import { makeStyles } from "@material-ui/core/styles";
 //import clsx from "clsx";
 import Card from "@material-ui/core/Card";
@@ -18,10 +18,10 @@ import { red } from "@material-ui/core/colors";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 //popover stuff
-import SimplePopover from "components/Commentbox/popover.js";
+import SimplePopover from "components/CommentBox/Popover.js";
 
 //list stuff
-import CommentList from "components/Commentbox/CommentList.js";
+import CommentList from "components/CommentBox/CommentList.js";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,7 +80,7 @@ export default function CommentCard() {
           {/* // coments are on a card and are made of a list */}
         </Typography>
       </CardContent>
-      <Typography component="p">ResturantName?</Typography>
+      <Typography component="p">Resturant Name?</Typography>
       <CardActions disableSpacing>
         <Typography variant="srOnly">Create a user</Typography>
 

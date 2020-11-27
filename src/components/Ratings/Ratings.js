@@ -14,6 +14,7 @@ class Ratings extends React.Component {
     this.setState({
       rating: newRating,
     });
+    alert(newRating);
   }
 
   render() {
