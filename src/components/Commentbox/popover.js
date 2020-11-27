@@ -71,7 +71,7 @@ export default function SimplePopover() {
           variant="outlined"
           label="Add Comment"
           multiline
-          rowsMax={4}
+          rowsMax={14}
           //helperText="Full width!"
           fullWidth
           margin="normal"
