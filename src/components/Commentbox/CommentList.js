@@ -30,7 +30,7 @@ export default function NestedList() {
             <FastfoodIcon />
           </ListItemIcon>
           <ListItemText
-            primary="Name"
+            primary="Username"
             secondary="this is where the actual comment goes"
           />
         </ListItem>

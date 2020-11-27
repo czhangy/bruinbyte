@@ -2,6 +2,7 @@ import React from "react";
 
 //card
 import CommentCard from "components/Commentbox/CommentCard";
+import SearchBar from "components/Commentbox/SearchBar";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "components/Header/Header.js";
@@ -10,7 +11,7 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Parallax from "components/Parallax/Parallax.js";
 // sections for this page
-import HeaderLinks from "components/Header/HeaderLinks.js";
+//import HeaderLinks from "components/Header/HeaderLinks.js";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
 const useStyles = makeStyles(styles);
@@ -20,15 +21,16 @@ export default function Components(props) {
   const { ...rest } = props;
   return (
     <div>
+      <SearchBar />
       <Header
-        brand="Material Kit React"
-        rightLinks={<HeaderLinks />}
+        //  brand="BruinByte"
+        //rightLinks={<HeaderLinks />}
         fixed
         color="transparent"
-        changeColorOnScroll={{
-          height: 40,
-          color: "white",
-        }}
+        // changeColorOnScroll={{
+        //   height: 40,
+        //   color: "white",
+        // }}
         {...rest}
       />
       <Parallax image={require("assets/img/bg4.jpg")}>
