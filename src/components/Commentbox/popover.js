@@ -49,47 +49,8 @@ export default function SimplePopover() {
         }}
       >
         {" "}
-        {/* <TextField
-          id="standard-multiline-flexible"
-          variant="outlined"
-          label="Add Comment"
-          multiline
-          rowsMax={14}
-          //helperText="Full width!"
-          fullWidth
-          margin="normal"
-          //value={this.state.value}
-          //onChange={this.handleChange}
-          value={value}
-          //onChange={handleChange}
-        /> */}
         <TextFieldFunc />
-        <Button
-          aria-describedby={id}
-          variant="contained"
-          color="primary"
-          onClick={() => alert("vic")}
-        >
-          Submit!
-        </Button>
-        {/* <TextField id="outlined-basic" label="Add Comment" variant="outlined" /> */}
-        {/* <Typography className={classes.typography}>
-          The content of the Popover.
-        </Typography> */}
       </Popover>
     </div>
   );
 }
-
-// function ActionLink() {
-//   function handleClick(e) {
-//     e.preventDefault();
-//     console.log('The link was clicked.');
-//   }
-
-//   return (
-//     <a href="#" onClick={handleClick}>
-//       Click me
-//     </a>
-//   );
-// }

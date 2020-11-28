@@ -8,9 +8,11 @@ import FastfoodIcon from "@material-ui/icons/Fastfood";
 import HomeIcon from "@material-ui/icons/Home";
 import { makeStyles } from "@material-ui/core/styles";
 
+//import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+
     //maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
@@ -28,10 +30,7 @@ export default function NestedList() {
         <ListItemIcon>
           <FastfoodIcon />
         </ListItemIcon>
-        <ListItemText
-          primary="username"
-          secondary="This is where the comment goes"
-        />
+        <ListItemText primary="username" secondary="boom" />
         {/* start comp */}
       </ListItem>
       <ListItem button>
