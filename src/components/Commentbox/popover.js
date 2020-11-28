@@ -3,25 +3,8 @@ import React from "react";
 import Popover from "@material-ui/core/Popover";
 //import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-
-// const useStyles = makeStyles((theme) => ({
-//   typography: {
-//     padding: theme.spacing(2),
-//   },
-// }));
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     display: "flex",
-//     flexWrap: "wrap",
-//   },
-//   textField: {
-//     marginLeft: theme.spacing(1),
-//     marginRight: theme.spacing(1),
-//     width: "25ch",
-//   },
-// }));
+//import TextField from "@material-ui/core/TextField";
+import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
 
 export default function SimplePopover() {
   //const classes = useStyles();
@@ -46,7 +29,7 @@ export default function SimplePopover() {
         color="primary"
         onClick={handleClick}
       >
-        ADD COMMENT
+        ADD COMENT
       </Button>
       <Popover
         id={id}
@@ -66,7 +49,7 @@ export default function SimplePopover() {
         }}
       >
         {" "}
-        <TextField
+        {/* <TextField
           id="standard-multiline-flexible"
           variant="outlined"
           label="Add Comment"
@@ -77,9 +60,10 @@ export default function SimplePopover() {
           margin="normal"
           //value={this.state.value}
           //onChange={this.handleChange}
-          //value={value}
+          value={value}
           //onChange={handleChange}
-        />
+        /> */}
+        <TextFieldFunc />
         <Button
           aria-describedby={id}
           variant="contained"
