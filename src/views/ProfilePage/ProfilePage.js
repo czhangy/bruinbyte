@@ -51,7 +51,7 @@ function ProfilePage(props) {
     <div>
       <Header
         color="transparent"
-        brand="Material Kit React"
+        brand="BruinByte"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
