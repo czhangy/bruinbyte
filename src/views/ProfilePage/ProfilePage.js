@@ -17,7 +17,7 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import profile from "assets/img/faces/christian.jpg";
+// import profile from "assets/img/faces/christian.jpg";
 
 import studio1 from "assets/img/examples/studio-1.jpg";
 import studio2 from "assets/img/examples/studio-2.jpg";
@@ -32,9 +32,11 @@ import work5 from "assets/img/examples/clem-onojegaw.jpg";
 
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+
 const useStyles = makeStyles(styles);
 
-export default function ProfilePage(props) {
+function ProfilePage(props) {
   const classes = useStyles();
   const { ...rest } = props;
   const imageClasses = classNames(
@@ -43,6 +45,8 @@ export default function ProfilePage(props) {
     classes.imgFluid
   );
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  const { user } = useAuth0();
+  const { name, picture, email } = user;
   return (
     <div>
       <Header
@@ -64,10 +68,10 @@ export default function ProfilePage(props) {
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
                   <div>
-                    <img src={profile} alt="..." className={imageClasses} />
+                    <img src={picture} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>Christian Louboutin</h3>
+                    <h3 className={classes.title}>{name}</h3>
                     <h6>DESIGNER</h6>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
@@ -83,12 +87,7 @@ export default function ProfilePage(props) {
               </GridItem>
             </GridContainer>
             <div className={classes.description}>
-              <p>
-                An artist of considerable range, Chet Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.{" "}
-              </p>
+              <p> {email} </p>
             </div>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
@@ -213,3 +212,7 @@ export default function ProfilePage(props) {
     </div>
   );
 }
+
+export default withAuthenticationRequired(ProfilePage, {
+  returnTo: "/profile-page",
+});
