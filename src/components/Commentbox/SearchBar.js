@@ -9,10 +9,11 @@ import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import AccountCircle from "@material-ui/icons/AccountCircle";
 
 import AuthenticationButton from "components/AuthenticationButton/AuthenticationButton.js";
+import ProfileBubble from "assets/jss/material-kit-react/components/profileBubble.js";
 
 import logo from "./logo.png";
 
@@ -186,16 +187,7 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+            <ProfileBubble />
           </div>
           <AuthenticationButton />
           <div className={classes.sectionMobile}></div>
