@@ -12,6 +12,8 @@ import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 
+import AuthenticationButton from "components/AuthenticationButton/AuthenticationButton.js";
+
 import logo from "./logo.png";
 
 const useStyles = makeStyles((theme) => ({
@@ -153,20 +155,18 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar
+        style={{
+          backgroundColor: "#003B5C",
+          color: "#FFD100",
+        }}
+        position="static"
+      >
         <Toolbar>
-          <Typography style={{ marginRight: 2 }}>
-            <a href="http://localhost:3000">
-              <img src={logo} alt="Fuck you" />
+          <Typography style={{ marginLeft: -10, marginRight: 2 }}>
+            <a href="/">
+              <img src={logo} alt="BruinByte Logo" />
             </a>
-          </Typography>
-          <Typography
-            className={classes.title}
-            variant="h6"
-            noWrap
-            style={{ marginRight: 30 }}
-          >
-            BruinByte
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -179,6 +179,9 @@ export default function PrimarySearchAppBar() {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
+              // style={{
+              // backgroundColor: "#2774AE",
+              // }}
             />
           </div>
           <div className={classes.grow} />
@@ -194,6 +197,7 @@ export default function PrimarySearchAppBar() {
               <AccountCircle />
             </IconButton>
           </div>
+          <AuthenticationButton />
           <div className={classes.sectionMobile}></div>
         </Toolbar>
       </AppBar>
