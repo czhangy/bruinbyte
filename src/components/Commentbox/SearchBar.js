@@ -155,14 +155,16 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <Typography style={{ marginRight: 16 }}>
-            <img src={logo} alt="Fuck you" />
+          <Typography style={{ marginRight: 2 }}>
+            <a href="http://localhost:3000">
+              <img src={logo} alt="Fuck you" />
+            </a>
           </Typography>
           <Typography
             className={classes.title}
             variant="h6"
             noWrap
-            style={{ marginRight: 32 }}
+            style={{ marginRight: 30 }}
           >
             BruinByte
           </Typography>

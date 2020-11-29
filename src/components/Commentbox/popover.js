@@ -29,7 +29,7 @@ export default function SimplePopover() {
         color="primary"
         onClick={handleClick}
       >
-        ADD COMENT
+        ADD COMMENT
       </Button>
       <Popover
         id={id}
