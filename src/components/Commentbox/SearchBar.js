@@ -8,10 +8,11 @@ import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import GitHubIcon from "@material-ui/icons/GitHub";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+
+import logo from "./logo.png";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -154,16 +155,16 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
+          <Typography style={{ marginRight: 16 }}>
+            <img src={logo} alt="Fuck you" />
+          </Typography>
+          <Typography
+            className={classes.title}
+            variant="h6"
+            noWrap
+            style={{ marginRight: 32 }}
           >
-            <GitHubIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Bruin Byte
+            BruinByte
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
