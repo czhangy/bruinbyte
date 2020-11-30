@@ -8,10 +8,14 @@ import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import GitHubIcon from "@material-ui/icons/GitHub";
 import SearchIcon from "@material-ui/icons/Search";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+
+import AuthenticationButton from "components/AuthenticationButton/AuthenticationButton.js";
+import ProfileBubble from "assets/jss/material-kit-react/components/profileBubble.js";
+
+import logo from "./logo.png";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -152,18 +156,18 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar
+        style={{
+          backgroundColor: "#003B5C",
+          color: "#FFD100",
+        }}
+        position="static"
+      >
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <GitHubIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Bruin Byte
+          <Typography style={{ marginLeft: -10, marginRight: 2 }}>
+            <a href="/">
+              <img src={logo} alt="BruinByte Logo" />
+            </a>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -176,21 +180,16 @@ export default function PrimarySearchAppBar() {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
+              // style={{
+              // backgroundColor: "#2774AE",
+              // }}
             />
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+            <ProfileBubble />
           </div>
+          <AuthenticationButton />
           <div className={classes.sectionMobile}></div>
         </Toolbar>
       </AppBar>

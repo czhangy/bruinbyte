@@ -10,7 +10,7 @@ const AuthenticationButton = () => {
   const { isAuthenticated } = useAuth0();
   const { isLoading } = useAuth0();
   if (isLoading) {
-    return <ReactLoading type={"spinningBubbles"} color={"#FF69B4"} />;
+    return <ReactLoading type={"spinningBubbles"} color={"#FFD100"} />;
   }
   return isAuthenticated ? <LogoutButton /> : <LoginButton />;
 };
