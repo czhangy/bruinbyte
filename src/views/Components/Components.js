@@ -9,8 +9,12 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
+/////resturants
 import TacoBell from "components/Restaurants/TacoBell.js";
 import Boom from "components/Restaurants/Boom.js";
+import TLT from "components/Restaurants/TLT.js";
+import Cava from "components/Restaurants/Cava.js";
+
 const useStyles = makeStyles(styles);
 
 export default function Components() {
@@ -38,6 +42,8 @@ export default function Components() {
       </div>
       <Boom />
       <TacoBell />
+      <TLT />
+      <Cava />
 
       {/* //<CommentCard /> */}
     </div>
