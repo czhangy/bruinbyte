@@ -2,7 +2,7 @@ import React from "react";
 
 //card
 //import CommentCard from "components/CommentBox/CommentCard";
-import SearchBar from "components/CommentBox/SearchBar";
+import SearchBar from "../../components/CommentBox/SearchBar.js";
 
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
