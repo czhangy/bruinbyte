@@ -20,7 +20,7 @@ ReactDOM.render(
       clientId="ZJIcTawo9TVY5NJzEU55DblmrByd7jOj"
       redirectUri={window.location.origin}
     >
-      <Router history={hist} basename={process.env.PUBLIC_URL}>
+      <Router history={hist}>
         <Switch>
           <Route path="/search" component={Components} />
           <Route path="/profile" component={ProfilePage} />
