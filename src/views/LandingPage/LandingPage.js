@@ -55,7 +55,7 @@ export default function LandingPage() {
               <Button
                 variant="contained"
                 size="lg"
-                href="/"
+                href="/search"
                 rel="noopener noreferrer"
                 style={{
                   backgroundColor: "#ffd100",

@@ -23,6 +23,7 @@ import SimplePopover from "components/CommentBox/Popover.js";
 //import SlidyStuff from "components/CommentBox/SlidyStuff.js";
 //list stuff
 import CommentList from "components/CommentBox/CommentList.js";
+import Ratings from "components/Ratings/Ratings.js";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -82,6 +83,7 @@ export default function CommentCard() {
         </Typography>
       </CardContent>
       <Typography component="p">Resturant Name?</Typography>
+      <Ratings />
       <CardActions disableSpacing>
         <Typography variant="srOnly">Create a user</Typography>
 

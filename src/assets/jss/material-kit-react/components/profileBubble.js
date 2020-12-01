@@ -11,7 +11,7 @@ const ProfileBubble = () => {
     const { picture } = user;
     return (
       <a
-        href="/profile-page"
+        href="/profile"
         style={{
           display: "inline-block",
           width: "50%",
