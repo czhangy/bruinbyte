@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+// SCSS
 import "assets/scss/material-kit-react.scss?v=1.9.0";
 
 // Auth0
