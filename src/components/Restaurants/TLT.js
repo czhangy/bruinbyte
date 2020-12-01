@@ -1,17 +1,21 @@
 import React from "react";
+
+// @material-ui
 import { makeStyles } from "@material-ui/core/styles";
+
+// Core Components
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-//import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-////vick stuff
-import RestPopover from "components/CommentBox/RestPopover.js";
 
-//import pic from "./tacobellpic.jpg";
-import pic from "./Picture/tltpic.jpg";
+// Custom Components
+import RestPopover from "assets/jss/material-kit-react/components/restPopover.js";
+
+// Images
+import pic from "../../assets/img/restaurants/tltpic.jpg";
 
 const useStyles = makeStyles({
   root: {
@@ -31,21 +35,17 @@ export default function TLT() {
         <CardMedia
           className={classes.media}
           image={pic}
-          title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            TacoBell
+            TLT
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Discription of tacobell maybe?
+            Description of TLT maybe?
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        {/* <Button size="small" color="primary" position="centered">
-          Learn More
-        </Button> */}
         <RestPopover />
       </CardActions>
     </Card>

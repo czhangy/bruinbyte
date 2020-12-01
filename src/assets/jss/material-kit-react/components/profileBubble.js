@@ -1,7 +1,10 @@
 import React from "react";
 
-import { useAuth0 } from "@auth0/auth0-react";
+// @material-ui icons
 import AccountCircle from "@material-ui/icons/AccountCircle";
+
+// Auth0
+import { useAuth0 } from "@auth0/auth0-react";
 
 const ProfileBubble = () => {
   const { isAuthenticated } = useAuth0();

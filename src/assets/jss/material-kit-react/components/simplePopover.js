@@ -1,13 +1,13 @@
 import React from "react";
-//import { makeStyles } from "@material-ui/core/styles";
+
+// Core Components
 import Popover from "@material-ui/core/Popover";
-//import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-//import TextField from "@material-ui/core/TextField";
+
+// Custom Components
 import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
 
 export default function SimplePopover() {
-  //const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {

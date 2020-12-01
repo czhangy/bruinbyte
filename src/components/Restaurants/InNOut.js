@@ -1,16 +1,21 @@
 import React from "react";
+
+// @material-ui
 import { makeStyles } from "@material-ui/core/styles";
+
+// Core Components
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-//import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-////vick stuff
-import RestPopover from "components/CommentBox/RestPopover.js";
 
-import pic from "./Picture/innout.jpg";
+// Custom Components
+import RestPopover from "assets/jss/material-kit-react/components/restPopover.js";
+
+// Images
+import pic from "../../assets/img/restaurants/innoutpic.jpg";
 
 const useStyles = makeStyles({
   root: {
@@ -27,11 +32,7 @@ export default function Boom() {
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={pic}
-          title="Contemplative Reptile"
-        />
+        <CardMedia className={classes.media} image={pic} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             In-N-Out Burger
@@ -42,9 +43,6 @@ export default function Boom() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        {/* <Button size="small" color="primary" position="centered">
-          Learn More
-        </Button> */}
         <RestPopover />
       </CardActions>
     </Card>

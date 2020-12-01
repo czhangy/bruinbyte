@@ -1,17 +1,15 @@
 import React from "react";
 
-//card
-//import CommentCard from "components/CommentBox/CommentCard";
-import SearchBar from "../../components/CommentBox/SearchBar.js";
-
+// @material-ui
 import { makeStyles } from "@material-ui/core/styles";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
-/////resturants
+// Custom Components
+import SearchBar from "../../assets/jss/material-kit-react/components/searchBar.js";
+
+// Resturants
 import TacoBell from "components/Restaurants/TacoBell.js";
-import Boom from "components/Restaurants/Boom.js";
+import InNOut from "components/Restaurants/InNOut.js";
 import TLT from "components/Restaurants/TLT.js";
 import Cava from "components/Restaurants/Cava.js";
 
@@ -22,30 +20,11 @@ export default function Components() {
   return (
     <div>
       <SearchBar />
-      <div className={classes.container}>
-        <GridContainer>
-          <GridItem>
-            <div className={classes.brand}>
-              <h1 className={classes.title}>BruinByte.</h1>
-            </div>
-          </GridItem>
-          <GridItem>
-            <div className={classes.brand}>
-              <h3 className={classes.subtitle}>
-                Like Yelp but better and Bruin
-              </h3>
-              <h4 className={classes.subtitle}>gettin egged today </h4>
-              <h1 className={classes.title}></h1>
-            </div>
-          </GridItem>
-        </GridContainer>
-      </div>
-      <Boom />
+      <div className={classes.container}></div>
+      <InNOut />
       <TacoBell />
       <TLT />
       <Cava />
-
-      {/* //<CommentCard /> */}
     </div>
   );
 }

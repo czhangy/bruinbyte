@@ -1,20 +1,25 @@
 import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
 
-// core components
+// @material-ui
+import { makeStyles } from "@material-ui/core/styles";
+import styles from "assets/jss/material-kit-react/views/landingPage.js";
+import classNames from "classnames";
+
+// Core Components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
-import SearchBar from "components/CommentBox/SearchBar.js";
 
-import styles from "assets/jss/material-kit-react/views/landingPage.js";
+// Custom Components
+import SearchBar from "../../assets/jss/material-kit-react/components/searchBar.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
+
+// Images
+import bg from "../../assets/img/landing-bg.jpg";
+import logo from "../../assets/img/logo.png";
 
 const useStyles = makeStyles(styles);
 
@@ -23,11 +28,23 @@ export default function LandingPage() {
   return (
     <div>
       <SearchBar />
-      <div style={{ backgroundColor: "#2774ae" }}>
+      <div
+        style={{
+          backgroundImage: "url(" + bg + ")",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+          height: "100%",
+        }}
+      >
         <div className={classes.container}>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
-              <br />
+          <GridContainer
+            direction="row"
+            justify="space-evenly"
+            alignItems="center"
+          >
+            <GridItem xs={6} sm={6} md={6}>
               <br />
               <br />
               <br />
@@ -35,18 +52,20 @@ export default function LandingPage() {
               <br />
               <h1
                 style={{
-                  fontSize: "8vw",
+                  fontSize: "90px",
                   fontWeight: "bold",
                   color: "#ffd100",
+                  textShadow: "2px 2px #000000",
                 }}
               >
                 BruinByte
               </h1>
               <h4
                 style={{
-                  fontSize: "2vw",
+                  fontSize: "25px",
                   fontWeight: "150",
                   color: "#FFB81C",
+                  textShadow: "1px 1px #000000",
                 }}
               >
                 A taste of Westwood
@@ -61,7 +80,7 @@ export default function LandingPage() {
                   backgroundColor: "#ffd100",
                   color: "#2774ae",
                   fontWeight: "bold",
-                  boxShadow: "2px 10px",
+                  boxShadow: "2px 2px #000000",
                 }}
               >
                 Find your next meal!
@@ -77,6 +96,12 @@ export default function LandingPage() {
               <br />
               <br />
               <br />
+            </GridItem>
+            <GridItem xs={6} sm={6} md={6}>
+              <img
+                src={logo}
+                style={{ marginTop: "-10vw", marginLeft: "-10px" }}
+              />
             </GridItem>
           </GridContainer>
         </div>

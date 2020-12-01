@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
+import "assets/scss/material-kit-react.scss?v=1.9.0";
+
+// Auth0
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 import Auth0ProviderWithHistory from "./auth/auth0ProviderWithHistory";
 
-import "assets/scss/material-kit-react.scss?v=1.9.0";
-
-// pages for this product
+// Pages
 import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
