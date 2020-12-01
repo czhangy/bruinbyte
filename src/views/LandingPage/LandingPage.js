@@ -39,11 +39,7 @@ export default function LandingPage() {
         }}
       >
         <div className={classes.container}>
-          <GridContainer
-            direction="row"
-            justify="space-evenly"
-            alignItems="center"
-          >
+          <GridContainer direction="row" justify="center" alignItems="center">
             <GridItem xs={6} sm={6} md={6}>
               <br />
               <br />
@@ -100,7 +96,11 @@ export default function LandingPage() {
             <GridItem xs={6} sm={6} md={6}>
               <img
                 src={logo}
-                style={{ marginTop: "-10vw", marginLeft: "-10px" }}
+                style={{
+                  marginTop: "-6vw",
+                  marginLeft: "-10px",
+                  width: "85%",
+                }}
               />
             </GridItem>
           </GridContainer>
