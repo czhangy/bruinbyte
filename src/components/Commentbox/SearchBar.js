@@ -180,9 +180,6 @@ export default function PrimarySearchAppBar() {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
-              // style={{
-              // backgroundColor: "#2774AE",
-              // }}
             />
           </div>
           <div className={classes.grow} />
