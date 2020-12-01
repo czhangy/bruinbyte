@@ -40,7 +40,7 @@ const ProfileBubble = () => {
     );
   } else
     return (
-      <IconButton style={styles.icon}>
+      <IconButton style={styles.icon} href="/profile">
         <AccountCircle />
       </IconButton>
     );

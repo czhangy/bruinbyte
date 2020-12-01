@@ -21,15 +21,22 @@ export default function RestPopover() {
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
+  const styles = {
+    buttonStyle: {
+      color: "#ffd100",
+      backgroundColor: "#2774ae",
+    },
+  };
+
   return (
     <div>
       <Button
         aria-describedby={id}
         variant="contained"
-        color="primary"
+        style={styles.buttonStyle}
         onClick={handleClick}
       >
-        Click Me
+        Reviews
       </Button>
       <Popover
         id={id}

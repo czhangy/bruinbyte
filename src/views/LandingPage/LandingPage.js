@@ -22,22 +22,49 @@ import bg from "../../assets/img/landing-bg.jpg";
 import logo from "../../assets/img/logo.png";
 
 const useStyles = makeStyles(styles);
+const customStyles = {
+  bgImage: {
+    backgroundImage: "url(" + bg + ")",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    backgroundSize: "cover",
+    backgroundAttachment: "fixed",
+    height: "100%",
+  },
+  bigText: {
+    fontSize: "90px",
+    fontWeight: "bold",
+    color: "#ffd100",
+    textShadow: "2px 2px #000000",
+    textAlign: "right",
+  },
+  smallText: {
+    fontSize: "25px",
+    fontWeight: "150",
+    color: "#FFB81C",
+    textShadow: "1px 1px #000000",
+    textAlign: "right",
+  },
+  buttonStyle: {
+    backgroundColor: "#ffd100",
+    color: "#2774ae",
+    fontWeight: "bold",
+    boxShadow: "2px 2px #000000",
+    float: "right",
+  },
+  logoStyle: {
+    marginTop: "-6vw",
+    marginLeft: "-10px",
+    width: "85%",
+  },
+};
 
 export default function LandingPage() {
   const classes = useStyles();
   return (
     <div>
       <TopBar />
-      <div
-        style={{
-          backgroundImage: "url(" + bg + ")",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
-          height: "100%",
-        }}
-      >
+      <div style={customStyles.bgImage}>
         <div className={classes.container}>
           <GridContainer direction="row" justify="center" alignItems="center">
             <GridItem xs={6} sm={6} md={6} justify="flex-end">
@@ -46,41 +73,15 @@ export default function LandingPage() {
               <br />
               <br />
               <br />
-              <h1
-                style={{
-                  fontSize: "90px",
-                  fontWeight: "bold",
-                  color: "#ffd100",
-                  textShadow: "2px 2px #000000",
-                  textAlign: "right",
-                }}
-              >
-                BruinByte
-              </h1>
-              <h4
-                style={{
-                  fontSize: "25px",
-                  fontWeight: "150",
-                  color: "#FFB81C",
-                  textShadow: "1px 1px #000000",
-                  textAlign: "right",
-                }}
-              >
-                A taste of Westwood
-              </h4>
+              <h1 style={customStyles.bigText}>BruinByte</h1>
+              <h4 style={customStyles.smallText}>A taste of Westwood</h4>
               <br />
               <Button
                 variant="contained"
                 size="lg"
                 href="/search"
                 rel="noopener noreferrer"
-                style={{
-                  backgroundColor: "#ffd100",
-                  color: "#2774ae",
-                  fontWeight: "bold",
-                  boxShadow: "2px 2px #000000",
-                  float: "right",
-                }}
+                style={customStyles.buttonStyle}
               >
                 Find your next meal!
               </Button>
@@ -97,14 +98,7 @@ export default function LandingPage() {
               <br />
             </GridItem>
             <GridItem xs={6} sm={6} md={6}>
-              <img
-                src={logo}
-                style={{
-                  marginTop: "-6vw",
-                  marginLeft: "-10px",
-                  width: "85%",
-                }}
-              />
+              <img src={logo} style={customStyles.logoStyle} />
             </GridItem>
           </GridContainer>
         </div>
