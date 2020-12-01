@@ -18,7 +18,7 @@ ReactDOM.render(
     <Auth0ProviderWithHistory
       domain="bruinbyte.us.auth0.com"
       clientId="ZJIcTawo9TVY5NJzEU55DblmrByd7jOj"
-      redirectUri={window.location.origin + "/bruinbyte"}
+      redirectUri={window.location.origin}
     >
       <Router history={hist} basename={process.env.PUBLIC_URL}>
         <Switch>
