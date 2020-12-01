@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/bruinbyte/static/css/main.c2aa7144.chunk.css",
+    "main.js": "/bruinbyte/static/js/main.2bac09ad.chunk.js",
+    "main.js.map": "/bruinbyte/static/js/main.2bac09ad.chunk.js.map",
+    "runtime-main.js": "/bruinbyte/static/js/runtime-main.3e3e4407.js",
+    "runtime-main.js.map": "/bruinbyte/static/js/runtime-main.3e3e4407.js.map",
+    "static/js/2.7341d337.chunk.js": "/bruinbyte/static/js/2.7341d337.chunk.js",
+    "static/js/2.7341d337.chunk.js.map": "/bruinbyte/static/js/2.7341d337.chunk.js.map",
+    "index.html": "/bruinbyte/index.html",
+    "static/css/main.c2aa7144.chunk.css.map": "/bruinbyte/static/css/main.c2aa7144.chunk.css.map",
+    "static/js/2.7341d337.chunk.js.LICENSE.txt": "/bruinbyte/static/js/2.7341d337.chunk.js.LICENSE.txt",
+    "static/js/main.2bac09ad.chunk.js.LICENSE.txt": "/bruinbyte/static/js/main.2bac09ad.chunk.js.LICENSE.txt",
+    "static/media/charlesZhang.d26aa664.JPG": "/bruinbyte/static/media/charlesZhang.d26aa664.JPG",
+    "static/media/clem-onojegaw.8809fc53.jpg": "/bruinbyte/static/media/clem-onojegaw.8809fc53.jpg",
+    "static/media/clem-onojeghuo.862a0952.jpg": "/bruinbyte/static/media/clem-onojeghuo.862a0952.jpg",
+    "static/media/cynthia-del-rio.43673965.jpg": "/bruinbyte/static/media/cynthia-del-rio.43673965.jpg",
+    "static/media/innout.96981d4f.jpg": "/bruinbyte/static/media/innout.96981d4f.jpg",
+    "static/media/joeBruin.1cd96178.jpg": "/bruinbyte/static/media/joeBruin.1cd96178.jpg",
+    "static/media/kendall.ab8e0d7e.jpg": "/bruinbyte/static/media/kendall.ab8e0d7e.jpg",
+    "static/media/mariya-georgieva.0817f394.jpg": "/bruinbyte/static/media/mariya-georgieva.0817f394.jpg",
+    "static/media/olu-eletu.429cd6ef.jpg": "/bruinbyte/static/media/olu-eletu.429cd6ef.jpg",
+    "static/media/profile-bg.jpg": "/bruinbyte/static/media/profile-bg.8129069f.jpg",
+    "static/media/studio-1.56c6121d.jpg": "/bruinbyte/static/media/studio-1.56c6121d.jpg",
+    "static/media/studio-2.2862e607.jpg": "/bruinbyte/static/media/studio-2.2862e607.jpg",
+    "static/media/studio-3.cb63e16b.jpg": "/bruinbyte/static/media/studio-3.cb63e16b.jpg",
+    "static/media/studio-4.4c272c46.jpg": "/bruinbyte/static/media/studio-4.4c272c46.jpg",
+    "static/media/studio-5.2862e607.jpg": "/bruinbyte/static/media/studio-5.2862e607.jpg",
+    "static/media/tacobellpic.e7609863.jpg": "/bruinbyte/static/media/tacobellpic.e7609863.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3e3e4407.js",
+    "static/js/2.7341d337.chunk.js",
+    "static/css/main.c2aa7144.chunk.css",
+    "static/js/main.2bac09ad.chunk.js"
+  ]
+}
