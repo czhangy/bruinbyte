@@ -19,7 +19,7 @@ import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
 
 // Custom Components
-import SearchBar from "../../assets/jss/material-kit-react/components/searchBar.js";
+import TopBar from "../../components/TopBar/TopBar.js";
 
 // Images
 import studio1 from "assets/img/examples/studio-1.jpg";
@@ -50,7 +50,7 @@ function ProfilePage() {
   const { name, picture, email } = user;
   return (
     <div>
-      <SearchBar />
+      <TopBar />
       <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>

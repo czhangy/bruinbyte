@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
 // Custom Components
-import SearchBar from "../../assets/jss/material-kit-react/components/searchBar.js";
+import TopBar from "../../components/TopBar/TopBar.js";
 
 // Resturants
 import TacoBell from "components/Restaurants/TacoBell.js";
@@ -19,7 +19,7 @@ export default function Components() {
   const classes = useStyles();
   return (
     <div>
-      <SearchBar />
+      <TopBar />
       <div className={classes.container}></div>
       <InNOut />
       <TacoBell />

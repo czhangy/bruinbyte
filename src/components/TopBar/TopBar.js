@@ -23,7 +23,7 @@ import AuthenticationButton from "components/AuthenticationButton/Authentication
 import ProfileBubble from "assets/jss/material-kit-react/components/profileBubble.js";
 
 // Images
-import logo from "../../../img/fullLogo.png";
+import logo from "../../assets/img/fullLogo.png";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -190,7 +190,7 @@ export default function PrimarySearchAppBar() {
             />
           </div>
           <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
+          <div>
             <ProfileBubble />
           </div>
           <AuthenticationButton />

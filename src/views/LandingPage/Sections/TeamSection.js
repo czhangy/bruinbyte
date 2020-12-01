@@ -1,12 +1,11 @@
 import React from "react";
-// nodejs library that concatenates classes
-import classNames from "classnames";
-// @material-ui/core components
+
+// @material-ui
 import { makeStyles } from "@material-ui/core/styles";
+import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
+import classNames from "classnames";
 
-// @material-ui/icons
-
-// core components
+// Core Components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
@@ -14,11 +13,9 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
-import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
-
-import team1 from "./joeBruin.jpg";
-import team2 from "./charlesZhang.JPG";
-import team3 from "assets/img/faces/kendall.jpg";
+// Images
+import base from "assets/img/faces/joeBruin.jpg";
+import cZhang from "assets/img/faces/charlesZhang.JPG";
 
 const useStyles = makeStyles(styles);
 
@@ -40,7 +37,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team1} alt="..." className={imageClasses} />
+                <img src={base} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Joe Bruin
@@ -89,7 +86,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team2} alt="..." className={imageClasses} />
+                <img src={base} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Victoria {'"'}Vicky Delk{'"'} Delk
@@ -131,7 +128,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team2} alt="..." className={imageClasses} />
+                <img src={cZhang} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Charles Zhang
@@ -182,7 +179,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team3} alt="..." className={imageClasses} />
+                <img src={base} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Danny Choi
@@ -225,7 +222,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team1} alt="..." className={imageClasses} />
+                <img src={base} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Brian Roysar
@@ -268,7 +265,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={team1} alt="..." className={imageClasses} />
+                <img src={base} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Kia Afzali

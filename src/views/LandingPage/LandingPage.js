@@ -11,7 +11,7 @@ import GridItem from "components/Grid/GridItem.js";
 import Button from "components/CustomButtons/Button.js";
 
 // Custom Components
-import SearchBar from "../../assets/jss/material-kit-react/components/searchBar.js";
+import TopBar from "../../components/TopBar/TopBar.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
@@ -27,7 +27,7 @@ export default function LandingPage() {
   const classes = useStyles();
   return (
     <div>
-      <SearchBar />
+      <TopBar />
       <div
         style={{
           backgroundImage: "url(" + bg + ")",
@@ -40,7 +40,7 @@ export default function LandingPage() {
       >
         <div className={classes.container}>
           <GridContainer direction="row" justify="center" alignItems="center">
-            <GridItem xs={6} sm={6} md={6}>
+            <GridItem xs={6} sm={6} md={6} justify="flex-end">
               <br />
               <br />
               <br />
@@ -52,6 +52,7 @@ export default function LandingPage() {
                   fontWeight: "bold",
                   color: "#ffd100",
                   textShadow: "2px 2px #000000",
+                  textAlign: "right",
                 }}
               >
                 BruinByte
@@ -62,6 +63,7 @@ export default function LandingPage() {
                   fontWeight: "150",
                   color: "#FFB81C",
                   textShadow: "1px 1px #000000",
+                  textAlign: "right",
                 }}
               >
                 A taste of Westwood
@@ -77,6 +79,7 @@ export default function LandingPage() {
                   color: "#2774ae",
                   fontWeight: "bold",
                   boxShadow: "2px 2px #000000",
+                  float: "right",
                 }}
               >
                 Find your next meal!
