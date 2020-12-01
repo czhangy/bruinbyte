@@ -20,6 +20,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 //popover stuff
 import SimplePopover from "components/CommentBox/Popover.js";
 
+//import SlidyStuff from "components/CommentBox/SlidyStuff.js";
 //list stuff
 import CommentList from "components/CommentBox/CommentList.js";
 

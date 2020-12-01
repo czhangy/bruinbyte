@@ -1,14 +1,16 @@
 import React from "react";
 
 //card
-import CommentCard from "components/CommentBox/CommentCard";
+//import CommentCard from "components/CommentBox/CommentCard";
 import SearchBar from "components/CommentBox/SearchBar";
-import Restaurants from "components/Restaurants/Restaurants.js";
+
 import { makeStyles } from "@material-ui/core/styles";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import styles from "assets/jss/material-kit-react/views/components.js";
 
+import TacoBell from "components/Restaurants/TacoBell.js";
+import Boom from "components/Restaurants/Boom.js";
 const useStyles = makeStyles(styles);
 
 export default function Components() {
@@ -34,8 +36,10 @@ export default function Components() {
           </GridItem>
         </GridContainer>
       </div>
-      <Restaurants />
-      <CommentCard />
+      <Boom />
+      <TacoBell />
+
+      {/* //<CommentCard /> */}
     </div>
   );
 }

@@ -5,10 +5,13 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
+//import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+////vick stuff
+import RestPopover from "components/CommentBox/RestPopover.js";
 
-import pic from "./innout.jpg";
+//import pic from "./tacobellpic.jpg";
+import pic from "./Picture/tacobellpic.jpg";
 
 const useStyles = makeStyles({
   root: {
@@ -19,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Restaurants() {
+export default function TacoBell() {
   const classes = useStyles();
 
   return (
@@ -32,17 +35,18 @@ export default function Restaurants() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            In-N-Out
+            TacoBell
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Burger
+            Discription of tacobell maybe?
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" position="centered">
+        {/* <Button size="small" color="primary" position="centered">
           Learn More
-        </Button>
+        </Button> */}
+        <RestPopover />
       </CardActions>
     </Card>
   );
