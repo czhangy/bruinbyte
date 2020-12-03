@@ -38,7 +38,7 @@ export default function Boom() {
             In-N-Out Burger
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            decription maybe?
+            Description of In-N-Out maybe?
           </Typography>
         </CardContent>
       </CardActionArea>

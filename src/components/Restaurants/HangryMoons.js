@@ -35,10 +35,10 @@ export default function HangryMoons() {
         <CardMedia className={classes.media} image={pic} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Hangry Moons
+            Hangry Moon{"'"}s
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of CPK maybe?
+            Description of Hangry Moon{"'"}s maybe?
           </Typography>
         </CardContent>
       </CardActionArea>

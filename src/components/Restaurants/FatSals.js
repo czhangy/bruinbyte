@@ -35,10 +35,10 @@ export default function FatSals() {
         <CardMedia className={classes.media} image={pic} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            FatSals
+            Fat Sal{"'"}s
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of CPK maybe?
+            Description of Fat Sal{"'"}s maybe?
           </Typography>
         </CardContent>
       </CardActionArea>

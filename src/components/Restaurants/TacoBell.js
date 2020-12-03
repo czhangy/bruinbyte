@@ -38,7 +38,7 @@ export default function TacoBell() {
             Taco Bell
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Discription of Taco Bell maybe?
+            Description of Taco Bell maybe?
           </Typography>
         </CardContent>
       </CardActionArea>

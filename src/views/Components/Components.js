@@ -75,8 +75,6 @@ export default function Components() {
         >
           <TLT />
         </GridItem>
-        <br />
-        <br />
         <GridItem
           xs={6}
           sm={6}
@@ -85,16 +83,104 @@ export default function Components() {
           style={customStyles.restBoxes}
         >
           <Cava />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <CPK />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <CornerBakery />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <MrRice />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <FatSals />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <HangryMoons />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <Meatball />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <Gushi />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <Fellow />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <Enzo />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <TenderGreens />
+        </GridItem>
+        <GridItem
+          xs={6}
+          sm={6}
+          md={4}
+          align="center"
+          style={customStyles.restBoxes}
+        >
           <ChickfilA />
         </GridItem>
       </GridContainer>

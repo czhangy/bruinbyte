@@ -35,10 +35,10 @@ export default function MrRice() {
         <CardMedia className={classes.media} image={pic} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Mr.Rice
+            Mr. Rice
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Mr.Rice maybe?
+            Description of Mr. Rice maybe?
           </Typography>
         </CardContent>
       </CardActionArea>

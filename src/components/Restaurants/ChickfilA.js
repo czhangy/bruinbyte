@@ -35,10 +35,10 @@ export default function ChickfilA() {
         <CardMedia className={classes.media} image={pic} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Chick Fil A
+            Chick-fil-A
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Chick Fil A maybe? also add the hyph thingy
+            Description of Chick-fil-A maybe?
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -35,10 +35,10 @@ export default function CornerBakery() {
         <CardMedia className={classes.media} image={pic} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            CAVA
+            Corner Bakery
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Cava maybe?
+            Description of Corner Bakery maybe?
           </Typography>
         </CardContent>
       </CardActionArea>

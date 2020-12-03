@@ -35,10 +35,10 @@ export default function Meatball() {
         <CardMedia className={classes.media} image={pic} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            CAVA
+            House of Meatballs
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Cava maybe?
+            Description of House of Meatballs maybe?
           </Typography>
         </CardContent>
       </CardActionArea>
