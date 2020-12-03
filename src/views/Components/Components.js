@@ -20,6 +20,13 @@ import CornerBakery from "components/Restaurants/CornerBakery.js";
 import CPK from "components/Restaurants/CPK.js";
 import MrRice from "components/Restaurants/MrRice.js";
 import FatSals from "components/Restaurants/FatSals.js";
+import HangryMoons from "components/Restaurants/HangryMoons.js";
+import Meatball from "components/Restaurants/Meatball.js";
+import Gushi from "components/Restaurants/Gushi.js";
+import Fellow from "components/Restaurants/Fellow.js";
+import Enzo from "components/Restaurants/Enzo.js";
+import TenderGreens from "components/Restaurants/TenderGreens.js";
+import ChickfilA from "components/Restaurants/ChickfilA.js";
 
 const useStyles = makeStyles(styles);
 
@@ -82,6 +89,13 @@ export default function Components() {
           <CornerBakery />
           <MrRice />
           <FatSals />
+          <HangryMoons />
+          <Meatball />
+          <Gushi />
+          <Fellow />
+          <Enzo />
+          <TenderGreens />
+          <ChickfilA />
         </GridItem>
       </GridContainer>
     </div>
