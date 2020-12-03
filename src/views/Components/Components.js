@@ -16,6 +16,10 @@ import TacoBell from "components/Restaurants/TacoBell.js";
 import InNOut from "components/Restaurants/InNOut.js";
 import TLT from "components/Restaurants/TLT.js";
 import Cava from "components/Restaurants/Cava.js";
+import CornerBakery from "components/Restaurants/CornerBakery.js";
+import CPK from "components/Restaurants/CPK.js";
+import MrRice from "components/Restaurants/MrRice.js";
+import FatSals from "components/Restaurants/FatSals.js";
 
 const useStyles = makeStyles(styles);
 
@@ -74,6 +78,10 @@ export default function Components() {
           style={customStyles.restBoxes}
         >
           <Cava />
+          <CPK />
+          <CornerBakery />
+          <MrRice />
+          <FatSals />
         </GridItem>
       </GridContainer>
     </div>
