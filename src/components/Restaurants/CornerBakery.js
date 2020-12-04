@@ -38,7 +38,7 @@ export default function CornerBakery() {
             Corner Bakery
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Corner Bakery maybe?
+            Artisan-inspired pastries, breads, breakfast, lunch, and dinner!
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -38,7 +38,7 @@ export default function Cava() {
             CAVA
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Cava maybe?
+            Make your own health-conscious Mediterranean Bowl
           </Typography>
         </CardContent>
       </CardActionArea>

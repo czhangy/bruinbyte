@@ -38,7 +38,7 @@ export default function Meatball() {
             House of Meatballs
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of House of Meatballs maybe?
+            Casual Italian eatery focusing on meatballs, beer, and wine
           </Typography>
         </CardContent>
       </CardActionArea>

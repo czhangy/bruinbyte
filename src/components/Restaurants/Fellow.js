@@ -38,7 +38,7 @@ export default function Fellow() {
             Fellow
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Fellow maybe?
+            Contemporary American cuisine in a chic, spacious setting
           </Typography>
         </CardContent>
       </CardActionArea>

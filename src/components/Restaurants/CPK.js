@@ -38,7 +38,7 @@ export default function CPK() {
             California Pizza Kitchen
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of CPK maybe?
+            Hand-tossed pizzas with seasonally-inspired ingredients
           </Typography>
         </CardContent>
       </CardActionArea>
