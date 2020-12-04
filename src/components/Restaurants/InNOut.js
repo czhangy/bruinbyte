@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Boom() {
+export default function InNOut() {
   const classes = useStyles();
 
   return (

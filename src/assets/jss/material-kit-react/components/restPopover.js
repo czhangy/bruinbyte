@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Core Components
 import Popover from "@material-ui/core/Popover";
@@ -57,3 +58,23 @@ export default function RestPopover() {
     </div>
   );
 }
+
+RestPopover.PropTypes = {
+  restaurant: PropTypes.oneOf([
+    "california-pizza-kitchen",
+    "cava",
+    "chick-fil-a",
+    "corner-bakery",
+    "enzos",
+    "fat-sals",
+    "fellow",
+    "gushi",
+    "hangry-moons",
+    "house-of-meatballs",
+    "in-n-out",
+    "mr-rice",
+    "taco-bell",
+    "tender-greens",
+    "tlt",
+  ]).isRequired,
+};
