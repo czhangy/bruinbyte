@@ -112,8 +112,3 @@ export const zeroStars = async (establishment) => {
       num_star_ratings: 0,
     })
 }
-
-export const getAllReviewsOf = async (establishment) => {
-  const snapshot = await firebase.firestore().collection("establishments").get();
-  return await snapshot.docs.map(doc => doc.data());
-}
