@@ -38,7 +38,7 @@ export default function FatSals() {
             Fat Sal{"'"}s
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Fat Sal{"'"}s maybe?
+            A local favorite for late-night-dining and fat sandwiches
           </Typography>
         </CardContent>
       </CardActionArea>

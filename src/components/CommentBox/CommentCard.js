@@ -66,16 +66,11 @@ export default function CommentCard() {
         title="this is comments layout ish? idrk i cant do anything until i have database connection"
         subheader="September 14, 2016 --> data???"
       />
-      <CardMedia
-        className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
-      />
+      <CardMedia className={classes.media} />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           comment stuff is gonna go here/ look like this once the data is all
           set up im thinking resturant pick/menu/map idrk go above
-          {/* // coments are on a card and are made of a list */}
         </Typography>
       </CardContent>
       <Typography component="p">Resturant Name?</Typography>

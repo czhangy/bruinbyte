@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Boom() {
+export default function InNOut() {
   const classes = useStyles();
 
   return (
@@ -38,7 +38,7 @@ export default function Boom() {
             In-N-Out Burger
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of In-N-Out maybe?
+            West-coast burger shop known for affordability and convenience
           </Typography>
         </CardContent>
       </CardActionArea>

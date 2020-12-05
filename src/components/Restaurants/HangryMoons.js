@@ -38,7 +38,7 @@ export default function HangryMoons() {
             Hangry Moon{"'"}s
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Hangry Moon{"'"}s maybe?
+            Local fried chicken place with large portions
           </Typography>
         </CardContent>
       </CardActionArea>

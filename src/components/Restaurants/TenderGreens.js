@@ -38,7 +38,7 @@ export default function TenderGreens() {
             Tender Greens
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Tender Greens maybe?
+            Chef-lead kitchen serving seasonal and responsibly sourced food
           </Typography>
         </CardContent>
       </CardActionArea>

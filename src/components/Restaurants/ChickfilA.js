@@ -38,7 +38,7 @@ export default function ChickfilA() {
             Chick-fil-A
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Chick-fil-A maybe?
+            Budget friendly American fast food chain known for fried chicken
           </Typography>
         </CardContent>
       </CardActionArea>

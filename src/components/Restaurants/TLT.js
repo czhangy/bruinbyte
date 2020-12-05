@@ -38,7 +38,7 @@ export default function TLT() {
             TLT
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of TLT maybe?
+            Mexican-American restaurant for playful casual dining
           </Typography>
         </CardContent>
       </CardActionArea>

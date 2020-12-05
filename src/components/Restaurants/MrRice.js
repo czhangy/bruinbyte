@@ -38,7 +38,7 @@ export default function MrRice() {
             Mr. Rice
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Mr. Rice maybe?
+            LA based chain for authentic budget-friendly Chinese food
           </Typography>
         </CardContent>
       </CardActionArea>

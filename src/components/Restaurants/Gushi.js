@@ -38,7 +38,7 @@ export default function Gushi() {
             Gushi
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Gushi maybe?
+            Korean stand serving Ample-portions of Seoul-style BBQ and teriyaki
           </Typography>
         </CardContent>
       </CardActionArea>

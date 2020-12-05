@@ -38,7 +38,7 @@ export default function TacoBell() {
             Taco Bell
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Taco Bell maybe?
+            Mexican fast food chain focused on low prices and fast service
           </Typography>
         </CardContent>
       </CardActionArea>

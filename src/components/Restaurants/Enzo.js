@@ -38,7 +38,7 @@ export default function Enzo() {
             Enzo{"'"}s
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Description of Enzo{"'"}s maybe?
+            Family-owned Italian fast-food known for Happy Hour pizza slices
           </Typography>
         </CardContent>
       </CardActionArea>
