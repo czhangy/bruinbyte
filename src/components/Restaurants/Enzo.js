@@ -35,7 +35,7 @@ export default function Enzo() {
         <CardMedia className={classes.media} image={pic} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Enzo{"'"}s
+            Enzo{"'"}s Pizzeria
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             Family-owned Italian fast-food known for Happy Hour pizza slices
@@ -43,7 +43,7 @@ export default function Enzo() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="enzos" />
       </CardActions>
     </Card>
   );

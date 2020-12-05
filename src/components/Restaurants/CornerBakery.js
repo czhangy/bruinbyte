@@ -38,12 +38,12 @@ export default function CornerBakery() {
             Corner Bakery
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Artisan-inspired pastries, breads, breakfast, lunch, and dinner!
+            Artisan-inspired pastries, breads, breakfast, lunch, and dinner
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="corner-bakery" />
       </CardActions>
     </Card>
   );

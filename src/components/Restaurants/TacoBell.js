@@ -43,7 +43,7 @@ export default function TacoBell() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="taco-bell" />
       </CardActions>
     </Card>
   );

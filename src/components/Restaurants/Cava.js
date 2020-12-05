@@ -38,12 +38,12 @@ export default function Cava() {
             CAVA
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Make your own health-conscious Mediterranean Bowl
+            Make your own health-conscious Mediterranean bowl
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="cava" />
       </CardActions>
     </Card>
   );

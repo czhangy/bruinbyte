@@ -35,15 +35,15 @@ export default function InNOut() {
         <CardMedia className={classes.media} image={pic} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            In-N-Out Burger
+            In-N-Out
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            West-coast burger shop known for affordability and convenience
+            West Coast burger shop known for affordability and convenience
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="in-n-out" />
       </CardActions>
     </Card>
   );

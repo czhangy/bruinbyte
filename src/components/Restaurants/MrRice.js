@@ -43,7 +43,7 @@ export default function MrRice() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="mr-rice" />
       </CardActions>
     </Card>
   );

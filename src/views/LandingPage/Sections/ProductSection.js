@@ -11,6 +11,15 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/prod
 
 const useStyles = makeStyles(styles);
 
+const customStyles = {
+  smallText: {
+    fontWeight: "bold",
+    fontSize: "1.5vw",
+    color: "#000000",
+  },
+  bigText: { fontWeight: "bold", fontSize: "2.5vw", color: "#000000" },
+};
+
 export default function ProductSection() {
   const classes = useStyles();
   return (
@@ -23,16 +32,13 @@ export default function ProductSection() {
             and they went on to take over the world. That{"'"}s right, welcome
             to BruinByte. Look 5 years into the future, what do you see? FAANG
             is gone. No more Facebook. No more Amazon. No more Google.
-            <br />
-            <br />
-            <h5 style={{ fontWeight: "bold", fontSize: "1.5vw" }}>
-              BruinByte is all there is.
-            </h5>
-            <br />
-            <h5 style={{ fontWeight: "bold", fontSize: "2.5vw" }}>
-              BruinByte is all.
-            </h5>
           </h5>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={8}>
+          <h5 style={customStyles.smallText}>BruinByte is all there is.</h5>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={8}>
+          <h5 style={customStyles.bigText}>BruinByte is all.</h5>
         </GridItem>
       </GridContainer>
       <br />

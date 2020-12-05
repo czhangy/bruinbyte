@@ -67,7 +67,7 @@ export default function LandingPage() {
       <div style={customStyles.bgImage}>
         <div className={classes.container}>
           <GridContainer direction="row" justify="center" alignItems="center">
-            <GridItem xs={6} sm={6} md={6} justify="flex-end">
+            <GridItem xs={6} sm={6} md={6}>
               <br />
               <br />
               <br />

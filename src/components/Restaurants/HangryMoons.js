@@ -43,7 +43,7 @@ export default function HangryMoons() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="hangry-moons" />
       </CardActions>
     </Card>
   );

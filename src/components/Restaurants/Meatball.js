@@ -43,7 +43,7 @@ export default function Meatball() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="house-of-meatballs" />
       </CardActions>
     </Card>
   );

@@ -38,12 +38,12 @@ export default function ChickfilA() {
             Chick-fil-A
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Budget friendly American fast food chain known for fried chicken
+            Budget-friendly American fast food chain known for fried chicken
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="chick-fil-a" />
       </CardActions>
     </Card>
   );

@@ -38,12 +38,12 @@ export default function Gushi() {
             Gushi
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Korean stand serving Ample-portions of Seoul-style BBQ and teriyaki
+            Korean stand serving ample portions of Seoul-style BBQ and teriyaki
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="gushi" />
       </CardActions>
     </Card>
   );

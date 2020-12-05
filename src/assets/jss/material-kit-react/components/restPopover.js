@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button";
 // Custom Components
 import CommentCard from "../../../../components/CommentBox/CommentCard.js";
 
-export default function RestPopover() {
+export default function RestPopover(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -53,13 +53,13 @@ export default function RestPopover() {
           horizontal: "center",
         }}
       >
-        <CommentCard />
+        <CommentCard restaurant={props.restaurant} />
       </Popover>
     </div>
   );
 }
 
-RestPopover.PropTypes = {
+RestPopover.propTypes = {
   restaurant: PropTypes.oneOf([
     "california-pizza-kitchen",
     "cava",

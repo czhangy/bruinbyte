@@ -2,25 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // Core Components
-import StarRatings from "../../../node_modules/react-star-ratings";
+import StarRatings from "../../../../../node_modules/react-star-ratings";
 
-// Firestore
-import { addStarRating } from "../../database/firestore.js";
+// Firebase
+import { getStarRating } from "database/firestore.js";
 
-class Ratings extends React.Component {
+export default class RatingsView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       rating: 0,
     };
-    this.changeRating = this.changeRating.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
-  changeRating(newRating) {
-    this.setState({
-      rating: newRating,
+
+  componentDidMount() {
+    getStarRating(this.props.restaurant).then((value) => {
+      this.setState({ rating: value });
     });
-    addStarRating("me", this.props.restaurant, this.state.rating);
-    alert("written");
   }
 
   render() {
@@ -28,16 +27,13 @@ class Ratings extends React.Component {
       <StarRatings
         rating={this.state.rating}
         starRatedColor="#ffd100"
-        starHoverColor="#2774ae"
-        changeRating={this.changeRating}
-        numberOfStars={5}
-        name="rating"
+        starDimension="75px"
       />
     );
   }
 }
 
-Ratings.propTypes = {
+RatingsView.propTypes = {
   restaurant: PropTypes.oneOf([
     "california-pizza-kitchen",
     "cava",
@@ -56,5 +52,3 @@ Ratings.propTypes = {
     "tlt",
   ]).isRequired,
 };
-
-export default Ratings;

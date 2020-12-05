@@ -43,7 +43,7 @@ export default function CPK() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="california-pizza-kitchen" />
       </CardActions>
     </Card>
   );

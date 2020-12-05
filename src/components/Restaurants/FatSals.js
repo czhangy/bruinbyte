@@ -38,12 +38,12 @@ export default function FatSals() {
             Fat Sal{"'"}s
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            A local favorite for late-night-dining and fat sandwiches
+            A local favorite for late-night dining and fat sandwiches
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="fat-sals" />
       </CardActions>
     </Card>
   );

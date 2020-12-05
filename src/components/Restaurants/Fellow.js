@@ -43,7 +43,7 @@ export default function Fellow() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="fellow" />
       </CardActions>
     </Card>
   );

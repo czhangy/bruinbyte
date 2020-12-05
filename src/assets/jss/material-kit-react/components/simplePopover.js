@@ -18,6 +18,13 @@ export default function SimplePopover() {
     setAnchorEl(null);
   };
 
+  const styles = {
+    buttonStyle: {
+      backgroundColor: "#2774ae",
+      color: "#ffd100",
+    },
+  };
+
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
@@ -26,10 +33,10 @@ export default function SimplePopover() {
       <Button
         aria-describedby={id}
         variant="contained"
-        color="primary"
+        style={styles.buttonStyle}
         onClick={handleClick}
       >
-        ADD COMMENT
+        ADD REVIEW
       </Button>
       <Popover
         id={id}

@@ -43,7 +43,7 @@ export default function TenderGreens() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="tender-greens" />
       </CardActions>
     </Card>
   );

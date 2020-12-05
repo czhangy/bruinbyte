@@ -43,7 +43,7 @@ export default function TLT() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <RestPopover />
+        <RestPopover restaurant="tlt" />
       </CardActions>
     </Card>
   );
