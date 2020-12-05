@@ -103,6 +103,15 @@ export const createEstablishment = async (establishment) => {
   });
 }
 
+export const getUserBio = async (username) => {
+  const bio = (await firebase.firestore().collection("users")
+  .doc(username).get())
+  .data()
+  .bio;
+
+  return bio;
+}
+
 // export const zeroStars = async (establishment) => {
 //   firebase.firestore()
 //     .collection("establishments")
