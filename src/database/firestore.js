@@ -26,7 +26,7 @@ export const getStarRating = async (establishment) => {
     return;
   }
 
-  return docData.rating;
+  return docData.star_rating;
 };
 
 export const getNumStarRatings = async (establishment) => {
@@ -73,7 +73,7 @@ export const addStarRating = async (user, establishment, starRating) => {
   const currentRating = parseFloat(
     (await firestore.collection("establishments")
       .doc(establishment).get())
-      .data().rating
+      .data().star_rating
   );
   const currentNumStarRatings = (await firestore.collection("establishments")
   .doc(establishment).get())
@@ -103,17 +103,17 @@ export const createEstablishment = async (establishment) => {
   });
 }
 
-export const zeroStars = async (establishment) => {
-  firebase.firestore()
-    .collection("establishments")
-    .doc(establishment)
-    .set({
-      star_rating: 0,
-      num_star_ratings: 0,
-    })
-}
+// export const zeroStars = async (establishment) => {
+//   firebase.firestore()
+//     .collection("establishments")
+//     .doc(establishment)
+//     .set({
+//       star_rating: 0,
+//       num_star_ratings: 0,
+//     })
+// }
 
-export const getAllReviewsOf = async (establishment) => {
-  const snapshot = await firebase.firestore().collection("establishments").get();
-  return await snapshot.docs.map(doc => doc.data());
-}
+// export const getAllReviewsOf = async (establishment) => {
+//   const snapshot = await firebase.firestore().collection("establishments").get();
+//   return await snapshot.docs.map(doc => doc.data());
+// }
