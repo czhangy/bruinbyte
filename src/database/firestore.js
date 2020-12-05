@@ -103,6 +103,16 @@ export const createEstablishment = async (establishment) => {
   });
 }
 
+export const createOrUpdateAccount = async (username, bio) => {
+  firebase.firestore()
+  .collection("users")
+  .doc(username)
+  .set({
+    username: username,
+    bio: bio,
+  });
+}
+
 export const getUserBio = async (username) => {
   const bio = (await firebase.firestore().collection("users")
   .doc(username).get())
