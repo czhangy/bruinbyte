@@ -20,7 +20,7 @@ class Ratings extends React.Component {
       rating: newRating,
     });
     addStarRating("me", this.props.restaurant, this.state.rating);
-    alert("written");
+    // alert("written");
   }
 
   render() {

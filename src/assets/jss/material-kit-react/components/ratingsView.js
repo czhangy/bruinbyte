@@ -3,15 +3,28 @@ import PropTypes from "prop-types";
 
 // Core Components
 import StarRatings from "../../../../../node_modules/react-star-ratings";
+import Typography from "@material-ui/core/Typography";
+import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
 
 // Firebase
 import { getStarRating } from "database/firestore.js";
+import { getNumStarRatings } from "database/firestore.js";
+
+const customStyles = {
+  text: {
+    fontWeight: "bold",
+    fontSize: "1.5vw",
+    color: "#ffd100",
+  },
+};
 
 export default class RatingsView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       rating: 0,
+      num: 0,
     };
     this.componentDidMount = this.componentDidMount.bind(this);
   }
@@ -20,15 +33,25 @@ export default class RatingsView extends React.Component {
     getStarRating(this.props.restaurant).then((value) => {
       this.setState({ rating: value });
     });
+    getNumStarRatings(this.props.restaurant).then((value) => {
+      this.setState({ num: value });
+    });
   }
 
   render() {
     return (
-      <StarRatings
-        rating={this.state.rating}
-        starRatedColor="#ffd100"
-        starDimension="75px"
-      />
+      <GridContainer direction="row" justify="flex-start" alignItems="center">
+        <GridItem xs={12}>
+          <StarRatings
+            rating={this.state.rating}
+            starRatedColor="#ffd100"
+            starDimension="75px"
+          />
+          <Typography style={customStyles.text}>
+            ({this.state.num} Ratings)
+          </Typography>
+        </GridItem>
+      </GridContainer>
     );
   }
 }

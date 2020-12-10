@@ -3,9 +3,13 @@ import React from "react";
 // Core Components
 import Popover from "@material-ui/core/Popover";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
 
 // Custom Components
 import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
+import Ratings from "components/Ratings/Ratings.js";
 
 export default function SimplePopover() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -18,10 +22,15 @@ export default function SimplePopover() {
     setAnchorEl(null);
   };
 
-  const styles = {
+  const customStyles = {
     buttonStyle: {
       backgroundColor: "#2774ae",
       color: "#ffd100",
+    },
+    text: {
+      fontWeight: "bold",
+      fontSize: "2vw",
+      color: "#2774ae",
     },
   };
 
@@ -33,7 +42,7 @@ export default function SimplePopover() {
       <Button
         aria-describedby={id}
         variant="contained"
-        style={styles.buttonStyle}
+        style={customStyles.buttonStyle}
         onClick={handleClick}
       >
         ADD REVIEW
@@ -44,7 +53,7 @@ export default function SimplePopover() {
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: "bottom",
+          vertical: "center",
           horizontal: "center",
         }}
         transformOrigin={{
@@ -55,8 +64,24 @@ export default function SimplePopover() {
           style: { width: "70%" },
         }}
       >
-        {" "}
-        <TextFieldFunc />
+        <br />
+        <br />
+        <GridContainer direction="row" justify="center" alignItems="center">
+          <GridItem xs={5}>
+            <Typography style={customStyles.text} align="right">
+              Rating:
+            </Typography>
+          </GridItem>
+          <GridItem xs={7}>
+            <Ratings />
+          </GridItem>
+          <GridItem xs={12}>
+            <br />
+            <TextFieldFunc />
+            <br />
+            <br />
+          </GridItem>
+        </GridContainer>
       </Popover>
     </div>
   );
