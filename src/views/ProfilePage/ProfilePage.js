@@ -5,8 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 import classNames from "classnames";
 
-// @material-ui/icons
-
 // Core Components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -39,9 +37,14 @@ function ProfilePage() {
       backgroundAttachment: "fixed",
       height: "100%",
     },
-    navStyle: {
-      color: "#ffd100",
-      backgroundColor: "#2774ae",
+    dangerZone: {
+      backgroundColor: "#ffcccb",
+      borderRadius: "5%",
+      border: "3px solid #ff0000",
+    },
+    dangerText: {
+      color: "#ff0000",
+      fontSize: "1.5vw",
     },
   };
   const { user } = useAuth0();
@@ -80,9 +83,28 @@ function ProfilePage() {
               </GridContainer>
               <div className={classes.description}>
                 <p> {email} </p>
+                <br />
+                <br />
+                <br />
+                <br />
               </div>
-              <UserForm type="username" content={nickname} />
-              <UserForm type="bio" content={email} />
+              <fieldset style={customStyles.dangerZone}>
+                <legend style={customStyles.dangerText}> Danger Zone </legend>
+                <br />
+                <br />
+                <UserForm type="username" content={nickname} />
+                <UserForm type="bio" content={email} />
+                <br />
+                <br />
+              </fieldset>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
             </div>
           </div>
         </div>

@@ -16,6 +16,7 @@ import CardFooter from "components/Card/CardFooter.js";
 import base from "assets/img/faces/joeBruin.jpg";
 import cZhang from "assets/img/faces/charlesZhang.JPG";
 import kAfzali from "assets/img/faces/kiaAfzali.png";
+import vDelk from "assets/img/faces/vickyDelk.PNG";
 
 const useStyles = makeStyles(styles);
 
@@ -37,7 +38,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={base} alt="..." className={imageClasses} />
+                <img src={vDelk} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Victoria Delk
@@ -89,15 +90,6 @@ export default function TeamSection() {
                   href="https://www.instagram.com/c.zhangg/"
                 >
                   <i className={classes.socials + " fab fa-instagram"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                  target="_blank"
-                  href="https://www.facebook.com/czhangy"
-                >
-                  <i className={classes.socials + " fab fa-facebook"} />
                 </Button>
                 <Button
                   justIcon
