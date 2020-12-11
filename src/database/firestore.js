@@ -122,6 +122,20 @@ export const getUserBio = async (username) => {
   return bio;
 }
 
+export const getArrayOfReviews = async(establishment) => {
+  // route creates a query snapshot of the reviews collection of establishment
+  const route = await firebase.firestore().collection("establishments").doc(establishment).collection("reviews").get();
+
+  // number of reviews - maybe need to use? just put here in case
+  var numberOfReviews = route.size;
+
+  // .docs ==> An array of all the documents in the QuerySnapshot.
+  var arrayOfReviews = route.docs.map(doc => doc.data());
+  return arrayOfReviews;
+}
+
+
+
 // export const zeroStars = async (establishment) => {
 //   firebase.firestore()
 //     .collection("establishments")

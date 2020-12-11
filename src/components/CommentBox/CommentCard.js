@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -122,14 +123,12 @@ export default function CommentCard(props) {
     <Card
       className={classes.root}
       style={{ backgroundColor: "#003b5c", border: "5px solid #ffb81c" }}
-      raised="true"
-    >
+      raised="true">
       <CardContent>
         <GridContainer
           direction="row"
           justify="space-evenly"
-          alignItems="center"
-        >
+          alignItems="center">
           <GridItem xs={6}>
             <Typography align="center" style={customStyles.titleText}>
               {name}:
@@ -161,7 +160,7 @@ export default function CommentCard(props) {
       </CardContent>
       <Collapse in={true} timeout="auto" unmountOnExit>
         <CardContent>
-          <CommentList />
+          <CommentList establishment={props.restaurant} />
         </CardContent>
       </Collapse>
       <CardActions disableSpacing>

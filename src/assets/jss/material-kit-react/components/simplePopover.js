@@ -7,11 +7,15 @@ import Button from "@material-ui/core/Button";
 // Custom Components
 import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
 
+// IMPORT FUNCTION FROM FIRESTORE.JS
+import { getArrayOfReviews } from "/Users/brianroysar/Desktop/bruinbyte/src/database/firestore.js";
+
 export default function SimplePopover() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    getArrayOfReviews("cava");
   };
 
   const handleClose = () => {

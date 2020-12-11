@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 
 // @material-ui
@@ -46,15 +47,13 @@ export default function Components() {
         direction="row"
         justify="center"
         alignItems="center"
-        spacing={12}
-      >
+        spacing={12}>
         <GridItem
           xs={6}
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <InNOut />
         </GridItem>
         <GridItem
@@ -62,8 +61,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <TacoBell />
         </GridItem>
         <GridItem
@@ -71,8 +69,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <TLT />
         </GridItem>
         <GridItem
@@ -80,8 +77,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <Cava />
         </GridItem>
         <GridItem
@@ -89,8 +85,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <CPK />
         </GridItem>
         <GridItem
@@ -98,8 +93,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <CornerBakery />
         </GridItem>
         <GridItem
@@ -107,8 +101,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <MrRice />
         </GridItem>
         <GridItem
@@ -116,8 +109,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <FatSals />
         </GridItem>
         <GridItem
@@ -125,8 +117,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <HangryMoons />
         </GridItem>
         <GridItem
@@ -134,8 +125,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <Meatball />
         </GridItem>
         <GridItem
@@ -143,8 +133,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <Gushi />
         </GridItem>
         <GridItem
@@ -152,8 +141,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <Fellow />
         </GridItem>
         <GridItem
@@ -161,8 +149,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <Enzo />
         </GridItem>
         <GridItem
@@ -170,8 +157,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <TenderGreens />
         </GridItem>
         <GridItem
@@ -179,8 +165,7 @@ export default function Components() {
           sm={6}
           md={4}
           align="center"
-          style={customStyles.restBoxes}
-        >
+          style={customStyles.restBoxes}>
           <ChickfilA />
         </GridItem>
       </GridContainer>

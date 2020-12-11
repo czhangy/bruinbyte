@@ -1,17 +1,22 @@
+/* eslint-disable */
 import React from "react";
+import { useState, useEffect } from "react";
 
-// @material-ui
+// // @material-ui
 import { makeStyles } from "@material-ui/core/styles";
 
-// @material-ui icons
+// // @material-ui icons
 import FastfoodIcon from "@material-ui/icons/Fastfood";
-import HomeIcon from "@material-ui/icons/Home";
+// import HomeIcon from "@material-ui/icons/Home";
 
-// Core Components
+// // Core Components
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
+
+// IMPORT FUNCTION FROM FIRESTORE.JS
+import { getArrayOfReviews } from "database/firestore.js";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,50 +30,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NestedList() {
+export default function CommentList(props) {
   const classes = useStyles();
+  // use cava as an example for now!!!!! (IMPORTANT TO CHANGE HERE)
+  // var arrayOfReviews = [];
+
+  let arrayOfReviewsPromise = getArrayOfReviews(props.establishment);
+  const [comments, setComments] = useState([]);
+
+  //promise handling -> only rerenders when comments is updated
+  useEffect(() => {
+    arrayOfReviewsPromise.then((array) => {
+      setComments(array);
+    });
+  }, comments);
 
   return (
     <div className={classes.root}>
-      <ListItem button>
-        <ListItemIcon>
-          <FastfoodIcon />
-        </ListItemIcon>
-        <ListItemText primary="name" secondary="boom" />
-        {/* // start comp */}
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <FastfoodIcon />
-        </ListItemIcon>
-        <ListItemText
-          primary="eggert"
-          secondary="the food was bad but this webiste is rly good"
-        />{" "}
-        {/* end comp */}
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <FastfoodIcon />
-        </ListItemIcon>
-        <ListItemText
-          primary="vicky delk"
-          secondary="I had been here before, about 5 years earlier. That said, I loved it then and I love it today. Clearly others do as well as restaurants can close up shop just as quickly as they open. Hopefully this one is around for the foreseeable future.
-
-                  First, you need to know this is an outdoor space regardless of Covid. It's a lovely garden vibe on a parking lot asphalt floor, but that's part of the experience I suppose. It's mixed with great service and the lights of an intimate garden by nightfall. They have umbrellas for shade and heat lamps
-                  for warmth.
-                  
-                  Second, consider one of their cocktails. I always go right for anything with Tequila, but the beer I hear is great also. They serve a popcorn of the day while you wait for your beverage to arrive. Prepare to have your eyes roll back like a shark. It's that good! Tonight's was bacon fat, scallion and fresh black pepper."
-        />
-      </ListItem>
-      {/* </List> */}
-      <Divider />
-      <ListItem button>
-        <ListItemIcon>
-          <HomeIcon />
-        </ListItemIcon>
-        <ListItemText primary="Return home or something idk (or maybe the add comment button)" />
-      </ListItem>
+      {comments.map((comment) => (
+        <ListItem>
+          <ListItemIcon>
+            <FastfoodIcon />
+          </ListItemIcon>
+          <ListItemText primary={comment.user} secondary={comment.text} />
+          <Divider />
+        </ListItem>
+      ))}
     </div>
   );
 }
