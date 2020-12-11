@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // Core Components
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -31,17 +30,15 @@ export default function TenderGreens() {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia className={classes.media} image={pic} />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Tender Greens
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Chef-lead kitchen serving seasonal and responsibly sourced food
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <CardMedia className={classes.media} image={pic} />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          Tender Greens
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          Chef-lead kitchen serving seasonal and responsibly sourced food
+        </Typography>
+      </CardContent>
       <CardActions>
         <RestPopover restaurant="tender-greens" />
       </CardActions>

@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // // @material-ui icons
 import FastfoodIcon from "@material-ui/icons/Fastfood";
-// import HomeIcon from "@material-ui/icons/Home";
+import HomeIcon from "@material-ui/icons/Home";
 
 // // Core Components
 import ListItem from "@material-ui/core/ListItem";
@@ -21,8 +21,6 @@ import { getArrayOfReviews } from "database/firestore.js";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-
-    //maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
   nested: {
