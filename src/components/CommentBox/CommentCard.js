@@ -327,7 +327,7 @@ export default function CommentCard(props) {
         {/* Add review button */}
         <GridContainer direction="row" justify="center" alignItems="center">
           <GridItem xs={12}>
-            <SimplePopover />
+            <SimplePopover restaurant = {props.restaurant}/>
           </GridItem>
         </GridContainer>
       </CardActions>

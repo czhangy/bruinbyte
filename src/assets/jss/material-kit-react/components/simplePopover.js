@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from "react";
+import PropTypes from "prop-types";
 
 // Core Components
 import Popover from "@material-ui/core/Popover";
@@ -12,10 +13,7 @@ import GridItem from "components/Grid/GridItem.js";
 import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
 import Ratings from "components/Ratings/Ratings.js";
 
-// IMPORT FUNCTION FROM FIRESTORE.JS
-// import { getArrayOfReviews } from "./../../../../database/firestore.js";
-
-export default function SimplePopover() {
+export default function SimplePopover(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -75,7 +73,7 @@ export default function SimplePopover() {
             </Typography>
           </GridItem>
           <GridItem xs={7}>
-            <Ratings />
+            <Ratings restaurant = {props.restaurant}/>
           </GridItem>
           <GridItem xs={12}>
             <br />
@@ -88,3 +86,23 @@ export default function SimplePopover() {
     </div>
   );
 }
+
+SimplePopover.propTypes = {
+  restaurant: PropTypes.oneOf([
+    "california-pizza-kitchen",
+    "cava",
+    "chick-fil-a",
+    "corner-bakery",
+    "enzos",
+    "fat-sals",
+    "fellow",
+    "gushi",
+    "hangry-moons",
+    "house-of-meatballs",
+    "in-n-out",
+    "mr-rice",
+    "taco-bell",
+    "tender-greens",
+    "tlt",
+  ]).isRequired,
+};
