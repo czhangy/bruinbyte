@@ -134,7 +134,10 @@ export const getArrayOfReviews = async(establishment) => {
   return arrayOfReviews;
 }
 
-
+export const userExists = async(display_name) => {
+  return (await firebase.firestore().collection("users").where("display_name", "==", display_name).get())
+    .size == 0;
+}
 
 // export const zeroStars = async (establishment) => {
 //   firebase.firestore()
