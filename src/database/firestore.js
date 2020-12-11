@@ -134,19 +134,7 @@ export const getArrayOfReviews = async(establishment) => {
   return arrayOfReviews;
 }
 
-
-
-// export const zeroStars = async (establishment) => {
-//   firebase.firestore()
-//     .collection("establishments")
-//     .doc(establishment)
-//     .set({
-//       star_rating: 0,
-//       num_star_ratings: 0,
-//     })
-// }
-
-// export const getAllReviewsOf = async (establishment) => {
-//   const snapshot = await firebase.firestore().collection("establishments").get();
-//   return await snapshot.docs.map(doc => doc.data());
-// }
+export const userExists = async(display_name) => {
+  return (await firebase.firestore().collection("users").where("display_name", "==", display_name).get())
+    .size == 0;
+}
