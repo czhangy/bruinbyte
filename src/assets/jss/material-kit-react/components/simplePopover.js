@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 
 // Core Components
@@ -12,14 +13,13 @@ import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
 import Ratings from "components/Ratings/Ratings.js";
 
 // IMPORT FUNCTION FROM FIRESTORE.JS
-import { getArrayOfReviews } from "/Users/brianroysar/Desktop/bruinbyte/src/database/firestore.js";
+// import { getArrayOfReviews } from "./../../../../database/firestore.js";
 
 export default function SimplePopover() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    getArrayOfReviews("cava");
   };
 
   const handleClose = () => {
@@ -47,8 +47,7 @@ export default function SimplePopover() {
         aria-describedby={id}
         variant="contained"
         style={customStyles.buttonStyle}
-        onClick={handleClick}
-      >
+        onClick={handleClick}>
         ADD REVIEW
       </Button>
       <Popover
@@ -66,8 +65,7 @@ export default function SimplePopover() {
         }}
         PaperProps={{
           style: { width: "70%" },
-        }}
-      >
+        }}>
         <br />
         <br />
         <GridContainer direction="row" justify="center" alignItems="center">
