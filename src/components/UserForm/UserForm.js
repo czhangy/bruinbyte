@@ -7,6 +7,9 @@ import Button from "@material-ui/core/Button";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 
+// Firestore
+import { createOrUpdateAccount } from "database/firestore.js";
+
 export default function UserForm(props) {
   // Get fields
   const label =
@@ -15,12 +18,12 @@ export default function UserForm(props) {
       2,
       JSON.stringify(props.type).length - 1
     );
-  const content = JSON.stringify(props.content).substring(
+  const username = JSON.stringify(props.name).substring(
     1,
-    JSON.stringify(props.content).length - 1
+    JSON.stringify(props.name).length - 1
   );
   // Update fields
-  const [value, setValue] = useState(content);
+  const [value, setValue] = useState("");
   const handleChange = (e) => {
     setValue(e.target.value);
   };
@@ -36,7 +39,11 @@ export default function UserForm(props) {
     <Button
       variant="contained"
       style={styles.buttonStyle}
-      onClick={() => alert(value)}
+      onClick={() =>
+        props.type == "username"
+          ? alert(value)
+          : createOrUpdateAccount(username, value)
+      }
     >
       Save!
     </Button>
@@ -64,7 +71,7 @@ export default function UserForm(props) {
 
 UserForm.propTypes = {
   type: PropTypes.oneOf(["username", "bio"]).isRequired,
-  content: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export { UserForm };
