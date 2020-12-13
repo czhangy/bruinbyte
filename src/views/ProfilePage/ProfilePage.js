@@ -48,7 +48,7 @@ function ProfilePage() {
     },
   };
   const { user } = useAuth0();
-  const { picture, email, nickname } = user;
+  const { picture, email, name } = user;
   return (
     <div>
       <TopBar />
@@ -75,7 +75,7 @@ function ProfilePage() {
                       <img src={picture} alt="..." className={imageClasses} />
                     </div>
                     <div className={classes.name}>
-                      <h3 className={classes.title}>{nickname} </h3>
+                      <h3 className={classes.title}>{name} </h3>
                       <h6></h6>
                     </div>
                   </div>
@@ -92,7 +92,7 @@ function ProfilePage() {
                 <legend style={customStyles.dangerText}> Danger Zone </legend>
                 <br />
                 <br />
-                <UserForm type="username" content={nickname} />
+                <UserForm type="username" content={name} />
                 <UserForm type="bio" content={email} />
                 <br />
                 <br />

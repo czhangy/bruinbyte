@@ -4,9 +4,6 @@ import PropTypes from "prop-types";
 // Core Components
 import StarRatings from "../../../node_modules/react-star-ratings";
 
-// Firestore
-import { addStarRating } from "../../database/firestore.js";
-
 class Ratings extends React.Component {
   constructor(props) {
     super(props);
@@ -15,12 +12,12 @@ class Ratings extends React.Component {
     };
     this.changeRating = this.changeRating.bind(this);
   }
+
   changeRating(newRating) {
     this.setState({
       rating: newRating,
     });
-    addStarRating("me", this.props.restaurant, this.state.rating);
-    // alert("written");
+    this.props.update(newRating);
   }
 
   render() {
@@ -38,23 +35,7 @@ class Ratings extends React.Component {
 }
 
 Ratings.propTypes = {
-  restaurant: PropTypes.oneOf([
-    "california-pizza-kitchen",
-    "cava",
-    "chick-fil-a",
-    "corner-bakery",
-    "enzos",
-    "fat-sals",
-    "fellow",
-    "gushi",
-    "hangry-moons",
-    "house-of-meatballs",
-    "in-n-out",
-    "mr-rice",
-    "taco-bell",
-    "tender-greens",
-    "tlt",
-  ]).isRequired,
+  update: PropTypes.func.isRequired,
 };
 
 export default Ratings;
