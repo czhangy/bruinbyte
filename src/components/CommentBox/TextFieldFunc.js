@@ -1,23 +1,28 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 // Core Components
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 
-const styles = {
-  buttonStyle: {
-    backgroundColor: "#2774ae",
-    color: "#ffd100",
-  },
-};
+// Auth0
+import { useAuth0 } from "@auth0/auth0-react";
 
-export default function TextFieldsFunc() {
+export default function TextFieldsFunc(props) {
+  const { user } = useAuth0();
+  const username = JSON.stringify(user.name).substring(
+    1,
+    JSON.stringify(user.name).length - 1
+  );
   const [value, setValue] = useState("");
+
   const handleChange = (e) => {
     setValue(e.target.value);
+    props.update(e.target.value);
+    props.getUser(username);
   };
+
   return (
     <div className="TextFieldsFunc">
       <GridContainer direction="row" justify="center" alignItems="center">
@@ -34,16 +39,12 @@ export default function TextFieldsFunc() {
             value={value}
           />
         </GridItem>
-        <GridItem xs={1}>
-          <Button
-            variant="contained"
-            style={styles.buttonStyle}
-            onClick={() => alert(value)}
-          >
-            Submit!
-          </Button>
-        </GridItem>
       </GridContainer>
     </div>
   );
 }
+
+TextFieldsFunc.propTypes = {
+  update: PropTypes.func.isRequired,
+  getUser: PropTypes.func.isRequired,
+};

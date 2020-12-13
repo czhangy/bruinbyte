@@ -35,23 +35,6 @@ class Ratings extends React.Component {
 }
 
 Ratings.propTypes = {
-  restaurant: PropTypes.oneOf([
-    "california-pizza-kitchen",
-    "cava",
-    "chick-fil-a",
-    "corner-bakery",
-    "enzos",
-    "fat-sals",
-    "fellow",
-    "gushi",
-    "hangry-moons",
-    "house-of-meatballs",
-    "in-n-out",
-    "mr-rice",
-    "taco-bell",
-    "tender-greens",
-    "tlt",
-  ]).isRequired,
   update: PropTypes.func.isRequired,
 };
 

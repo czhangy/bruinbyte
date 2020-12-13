@@ -12,12 +12,17 @@ import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
 import Ratings from "components/Ratings/Ratings.js";
 
 // Firestore
-import { addStarRating } from "database/firestore.js";
+import { addStarRating, addReview } from "database/firestore.js";
 
 const customStyles = {
   text: {
     fontWeight: "bold",
     fontSize: "2vw",
+    color: "#2774ae",
+  },
+  bigText: {
+    fontWeight: "bold",
+    fontSize: "3vw",
     color: "#2774ae",
   },
   buttonStyle: {
@@ -32,10 +37,13 @@ export default class Submission extends React.Component {
     this.state = {
       stars: -1,
       text: "",
+      status: 0,
+      username: "",
     };
     this.changeComment = this.changeComment.bind(this);
     this.changeRating = this.changeRating.bind(this);
     this.handleWrite = this.handleWrite.bind(this);
+    this.getUsername = this.getUsername.bind(this);
   }
 
   changeRating(newRating) {
@@ -50,43 +58,76 @@ export default class Submission extends React.Component {
     });
   }
 
+  getUsername(user) {
+    this.setState({
+      username: user,
+    });
+  }
+
   handleWrite() {
-    addStarRating("placeholder", this.props.restaurant, this.state.stars);
-    // write comment code
+    addStarRating(this.state.username, this.props.restaurant, this.state.stars);
+    addReview(this.state.username, this.props.restaurant, this.state.text);
     alert("written");
+    this.setState({
+      status: 1,
+    });
   }
 
   render() {
-    return (
-      <GridContainer direction="row" justify="center" alignItems="center">
-        <GridItem xs={5}>
-          <Typography style={customStyles.text} align="right">
-            Rating:
-          </Typography>
-        </GridItem>
-        <GridItem xs={7}>
-          <Ratings
-            restaurant={this.props.restaurant}
-            update={this.changeRating}
-          />
-        </GridItem>
-        <GridItem xs={12}>
-          <br />
-          <TextFieldFunc />
-          <br />
-          <br />
-        </GridItem>
-        <GridItem xs={12}>
-          <Button
-            variant="contained"
-            style={customStyles.buttonStyle}
-            onClick={() => this.handleWrite()}
-          >
-            Submit!
-          </Button>
-        </GridItem>
-      </GridContainer>
-    );
+    if (!this.state.status) {
+      // default
+      return (
+        <GridContainer direction="row" justify="center" alignItems="center">
+          <GridItem xs={5}>
+            <Typography style={customStyles.text} align="right">
+              Rating:
+            </Typography>
+          </GridItem>
+          <GridItem xs={7}>
+            <Ratings update={this.changeRating} />
+          </GridItem>
+          <GridItem xs={12}>
+            <br />
+            <TextFieldFunc
+              update={this.changeComment}
+              getUser={this.getUsername}
+            />
+          </GridItem>
+          <GridItem xs={1}>
+            <br />
+            <Button
+              variant="contained"
+              style={customStyles.buttonStyle}
+              onClick={() => this.handleWrite()}
+            >
+              Submit!
+            </Button>
+            <br />
+            <br />
+          </GridItem>
+        </GridContainer>
+      );
+    } else if (this.state.status == 1) {
+      // rating just submitted
+      return (
+        <GridContainer direction="row" justify="center" alignItems="center">
+          <GridItem xs={12}>
+            <br />
+            <br />
+            <br />
+            <br />
+            <Typography style={customStyles.bigText} align="center">
+              Rating submitted!
+            </Typography>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </GridItem>
+        </GridContainer>
+      );
+    }
   }
 }
 
