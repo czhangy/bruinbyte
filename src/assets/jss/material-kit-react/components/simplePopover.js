@@ -5,13 +5,9 @@ import PropTypes from "prop-types";
 // Core Components
 import Popover from "@material-ui/core/Popover";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
 
 // Custom Components
-import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
-import Ratings from "components/Ratings/Ratings.js";
+import Submission from "components/Submission/Submission.js";
 
 // Auth0
 import { useAuth0 } from "@auth0/auth0-react";
@@ -73,22 +69,7 @@ export default function SimplePopover(props) {
       >
         <br />
         <br />
-        <GridContainer direction="row" justify="center" alignItems="center">
-          <GridItem xs={5}>
-            <Typography style={customStyles.text} align="right">
-              Rating:
-            </Typography>
-          </GridItem>
-          <GridItem xs={7}>
-            <Ratings restaurant={props.restaurant} />
-          </GridItem>
-          <GridItem xs={12}>
-            <br />
-            <TextFieldFunc />
-            <br />
-            <br />
-          </GridItem>
-        </GridContainer>
+        <Submission restaurant = {props.restaurant}/>
       </Popover>
     </div>
   );
