@@ -34,6 +34,7 @@ export default function UserForm(props) {
       backgroundColor: "#2774ae",
     },
   };
+
   // Generalize the button
   const saveButton = (
     <Button

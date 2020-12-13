@@ -65,12 +65,21 @@ export default class Submission extends React.Component {
   }
 
   handleWrite() {
-    addStarRating(this.state.username, this.props.restaurant, this.state.stars);
-    addReview(this.state.username, this.props.restaurant, this.state.text);
-    alert("written");
-    this.setState({
-      status: 1,
-    });
+    if (this.state.stars == -1) {
+      alert("You must add a star rating!");
+    } else if (this.state.text == "") {
+      alert("You must add a review!");
+    } else {
+      addStarRating(
+        this.state.username,
+        this.props.restaurant,
+        this.state.stars
+      );
+      addReview(this.state.username, this.props.restaurant, this.state.text);
+      this.setState({
+        status: 1,
+      });
+    }
   }
 
   render() {

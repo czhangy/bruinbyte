@@ -129,6 +129,7 @@ export const createOrUpdateAccount = async (username, bio) => {
   });
 }
 
+/*
 export const createOrUpdateAccount = async (username, bio, display_name) => {
   firebase.firestore()
   .collection("users")
@@ -138,7 +139,7 @@ export const createOrUpdateAccount = async (username, bio, display_name) => {
     display_name: display_name,
     bio: bio,
   });
-}
+} */
 
 export const getUserBio = async (username) => {
   const bio = (await firebase.firestore().collection("users")
