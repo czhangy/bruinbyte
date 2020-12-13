@@ -51,6 +51,7 @@ export const addReview = (user, establishment, review) => {
   const restaurantDocRef = firestore.collection("establishments")
     .doc(establishment);
 
+  // Adding review to establishment's "review" collection
   restaurantDocRef
     .collection("reviews")
     .add({
@@ -64,6 +65,21 @@ export const addReview = (user, establishment, review) => {
   .catch(function(error) {
       console.error("Error adding document: ", error);
   });
+
+  // Adding review to user's "review" collection
+  firestore.collection("users")
+  .doc(user)
+  .collection("reviews")
+  .add({
+    date_created: dateCreated,
+    text: review,
+})
+.then(function(docRef) {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch(function(error) {
+    console.error("Error adding document: ", error);
+});
 };
 
 // 0 <= starRating <= 5 
@@ -113,6 +129,17 @@ export const createOrUpdateAccount = async (username, bio) => {
   });
 }
 
+export const createOrUpdateAccount = async (username, bio, display_name) => {
+  firebase.firestore()
+  .collection("users")
+  .doc(username)
+  .set({
+    username: username,
+    display_name: display_name,
+    bio: bio,
+  });
+}
+
 export const getUserBio = async (username) => {
   const bio = (await firebase.firestore().collection("users")
   .doc(username).get())
@@ -134,7 +161,32 @@ export const getArrayOfReviews = async(establishment) => {
   return arrayOfReviews;
 }
 
+// Just copied above function, but for "users" instead of "establishments"
+export const getArrayOfReviewsFromUser = async(username) => {
+  // route creates a query snapshot of the reviews collection of establishment
+  const route = await firebase.firestore().collection("users").doc(username).collection("reviews").get();
+
+  // number of reviews - maybe need to use? just put here in case
+  var numberOfReviews = route.size;
+
+  // .docs ==> An array of all the documents in the QuerySnapshot.
+  var arrayOfReviews = route.docs.map(doc => doc.data());
+  return arrayOfReviews;
+}
+
+// WARNING: TAKES IN DISPLAY_NAME, NOT USERNAME, AS THE PARAMETER
+// Use this as a "Is this display name taken?" checker
 export const userExists = async(display_name) => {
   return (await firebase.firestore().collection("users").where("display_name", "==", display_name).get())
     .size == 0;
+}
+
+// Returns undefined if user doesn't have display name
+export const getUserDisplayName = async (username) => {
+  const display_name = (await firebase.firestore().collection("users")
+  .doc(username).get())
+  .data()
+  .display_name;
+
+  return display_name;
 }
