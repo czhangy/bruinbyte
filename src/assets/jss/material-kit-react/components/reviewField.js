@@ -9,7 +9,7 @@ import GridItem from "components/Grid/GridItem.js";
 // Auth0
 import { useAuth0 } from "@auth0/auth0-react";
 
-export default function TextFieldsFunc(props) {
+export default function ReviewField(props) {
   const { user } = useAuth0();
   const username = JSON.stringify(user.name).substring(
     1,
@@ -44,7 +44,7 @@ export default function TextFieldsFunc(props) {
   );
 }
 
-TextFieldsFunc.propTypes = {
+ReviewField.propTypes = {
   update: PropTypes.func.isRequired,
   getUser: PropTypes.func.isRequired,
 };

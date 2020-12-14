@@ -8,7 +8,7 @@ import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 
 // Firestore
-import { createOrUpdateAccount } from "database/firestore.js";
+import { createBio, createDisplayName } from "database/firestore.js";
 
 export default function UserForm(props) {
   // Get fields
@@ -42,8 +42,8 @@ export default function UserForm(props) {
       style={styles.buttonStyle}
       onClick={() =>
         props.type == "username"
-          ? alert(value)
-          : createOrUpdateAccount(username, value)
+          ? createDisplayName(username, value)
+          : createBio(username, value)
       }
     >
       Save!
@@ -70,6 +70,7 @@ export default function UserForm(props) {
   );
 }
 
+// Define props
 UserForm.propTypes = {
   type: PropTypes.oneOf(["username", "bio"]).isRequired,
   name: PropTypes.string.isRequired,

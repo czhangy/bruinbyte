@@ -119,7 +119,7 @@ export const createEstablishment = async (establishment) => {
   });
 }
 
-export const createOrUpdateAccount = async (username, bio) => {
+export const createBio = async (username, bio) => {
   firebase.firestore()
   .collection("users")
   .doc(username)
@@ -129,17 +129,15 @@ export const createOrUpdateAccount = async (username, bio) => {
   });
 }
 
-/*
-export const createOrUpdateAccount = async (username, bio, display_name) => {
+export const createDisplayName = async (username, display_name) => {
   firebase.firestore()
   .collection("users")
   .doc(username)
   .set({
     username: username,
     display_name: display_name,
-    bio: bio,
   });
-} */
+}
 
 export const getUserBio = async (username) => {
   const bio = (await firebase.firestore().collection("users")

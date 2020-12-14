@@ -16,13 +16,9 @@ import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-//import MoreVertIcon from "@material-ui/icons/MoreVert";
-//import Avatar from "@material-ui/core/Avatar";
-//import IconButton from "@material-ui/core/IconButton";
-//import CardHeader from "@material-ui/core/CardHeader";
 
 // Custom Components
-import SimplePopover from "assets/jss/material-kit-react/components/simplePopover.js";
+import AddReviewCard from "assets/jss/material-kit-react/components/addReviewCard.js";
 import CommentList from "assets/jss/material-kit-react/components/commentList.js";
 import RatingsView from "assets/jss/material-kit-react/components/ratingsView.js";
 import DeliveryServices from "assets/jss/material-kit-react/components/deliveryServices.js";
@@ -97,7 +93,7 @@ function setInfo(nm, addy, phone, ue, gh, pm, dd) {
   doordash = dd;
 }
 
-export default function CommentCard(props) {
+export default function RestaurantCard(props) {
   const classes = useStyles();
   const mapImg = mapFile(`./${props.restaurant}-map.png`);
 
@@ -327,7 +323,7 @@ export default function CommentCard(props) {
         {/* Add review button */}
         <GridContainer direction="row" justify="center" alignItems="center">
           <GridItem xs={12}>
-            <SimplePopover restaurant = {props.restaurant}/>
+            <AddReviewCard restaurant = {props.restaurant}/>
           </GridItem>
         </GridContainer>
       </CardActions>
@@ -335,7 +331,7 @@ export default function CommentCard(props) {
   );
 }
 
-CommentCard.propTypes = {
+RestaurantCard.propTypes = {
   restaurant: PropTypes.oneOf([
     "california-pizza-kitchen",
     "cava",
@@ -354,20 +350,3 @@ CommentCard.propTypes = {
     "tlt",
   ]).isRequired,
 };
-
-{
-  /* <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="this is comments layout ish? idrk i cant do anything until i have database connection"
-        subheader="September 14, 2016 --> data???"
-      /> */
-}

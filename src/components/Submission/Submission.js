@@ -8,7 +8,7 @@ import GridItem from "components/Grid/GridItem.js";
 import Typography from "@material-ui/core/Typography";
 
 // Custom Components
-import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
+import ReviewField from "assets/jss/material-kit-react/components/reviewField.js";
 import Ratings from "components/Ratings/Ratings.js";
 
 // Firestore
@@ -97,7 +97,7 @@ export default class Submission extends React.Component {
           </GridItem>
           <GridItem xs={12}>
             <br />
-            <TextFieldFunc
+            <ReviewField
               update={this.changeComment}
               getUser={this.getUsername}
             />
