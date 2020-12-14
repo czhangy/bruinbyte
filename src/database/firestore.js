@@ -119,6 +119,18 @@ export const createEstablishment = async (establishment) => {
   });
 }
 
+
+// OUTDATED (back when we didnt have display name)
+// export const createOrUpdateAccount = async (username, bio) => {
+//   firebase.firestore()
+//   .collection("users")
+//   .doc(username)
+//   .set({
+//     username: username,
+//     bio: bio,
+//   });
+// }
+
 export const createBio = async (username, bio) => {
   firebase.firestore()
   .collection("users")
@@ -126,8 +138,9 @@ export const createBio = async (username, bio) => {
   .set({
     username: username,
     bio: bio,
-  });
+  },{ merge: true }); // 'Merge: true' prevents the overwriting issue
 }
+
 
 export const createDisplayName = async (username, display_name) => {
   firebase.firestore()
@@ -136,7 +149,7 @@ export const createDisplayName = async (username, display_name) => {
   .set({
     username: username,
     display_name: display_name,
-  });
+    }, { merge: true });  // 'Merge: true' prevents the overwriting issue
 }
 
 export const getUserBio = async (username) => {
@@ -188,4 +201,26 @@ export const getUserDisplayName = async (username) => {
   .display_name;
 
   return display_name;
+}
+
+/* Added 12/13/20 */
+
+// Creates or updates the user's bio
+export const setUserBio = async (username, bio) => {
+  firebase.firestore()
+  .collection("users")
+  .doc(username)
+  .set({
+    bio: bio
+  }, { merge: true });
+}
+
+// Creates or updates the user's display name
+export const setUserDisplayName = async (username, display_name) => {
+  firebase.firestore()
+  .collection("users")
+  .doc(username)
+  .set({
+    display_name: display_name
+  }, { merge: true });
 }
