@@ -119,6 +119,7 @@ export const createEstablishment = async (establishment) => {
   });
 }
 
+
 // OUTDATED (back when we didnt have display name)
 // export const createOrUpdateAccount = async (username, bio) => {
 //   firebase.firestore()
@@ -130,15 +131,25 @@ export const createEstablishment = async (establishment) => {
 //   });
 // }
 
-export const createOrUpdateAccount = async (username, bio, display_name) => {
+export const createBio = async (username, bio) => {
+  firebase.firestore()
+  .collection("users")
+  .doc(username)
+  .set({
+    username: username,
+    bio: bio,
+  },{ merge: true }); // 'Merge: true' prevents the overwriting issue
+}
+
+
+export const createDisplayName = async (username, display_name) => {
   firebase.firestore()
   .collection("users")
   .doc(username)
   .set({
     username: username,
     display_name: display_name,
-    bio: bio,
-  }, { merge: true });
+    }, { merge: true });  // 'Merge: true' prevents the overwriting issue
 }
 
 export const getUserBio = async (username) => {

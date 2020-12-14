@@ -3,7 +3,7 @@ import React from "react";
 
 // @material-ui
 import { makeStyles } from "@material-ui/core/styles";
-import styles from "assets/jss/material-kit-react/views/components.js";
+import styles from "assets/jss/material-kit-react/views/searchPage.js";
 
 // Core Components
 import GridContainer from "components/Grid/GridContainer.js";

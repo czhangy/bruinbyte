@@ -10,7 +10,7 @@ import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 import Auth0ProviderWithHistory from "./auth/auth0ProviderWithHistory";
 
 // Pages
-import Components from "views/Components/Components.js";
+import SearchPage from "views/SearchPage/SearchPage.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 
@@ -25,7 +25,7 @@ ReactDOM.render(
     >
       <Router history={hist}>
         <Switch>
-          <Route path="/search" component={Components} />
+          <Route path="/search" component={SearchPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route path="/" component={LandingPage} />
         </Switch>

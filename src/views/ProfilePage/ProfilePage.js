@@ -12,6 +12,8 @@ import GridItem from "components/Grid/GridItem.js";
 // Custom Components
 import TopBar from "../../components/TopBar/TopBar.js";
 import { UserForm } from "../../components/UserForm/UserForm.js";
+import BioSection from "./Sections/BioSection.js";
+import NameSection from "./Sections/NameSection.js";
 
 // Images
 import bg from "../../assets/img/landing-bg.jpg";
@@ -48,7 +50,7 @@ function ProfilePage() {
     },
   };
   const { user } = useAuth0();
-  const { picture, email, name } = user;
+  const { picture, name } = user;
   return (
     <div>
       <TopBar />
@@ -75,14 +77,25 @@ function ProfilePage() {
                       <img src={picture} alt="..." className={imageClasses} />
                     </div>
                     <div className={classes.name}>
-                      <h3 className={classes.title}>{name} </h3>
-                      <h6></h6>
+                      <h3 className={classes.title}>
+                        <NameSection
+                          name={JSON.stringify(name).substring(
+                            1,
+                            JSON.stringify(name).length - 1
+                          )}
+                        />{" "}
+                      </h3>
                     </div>
                   </div>
                 </GridItem>
               </GridContainer>
               <div className={classes.description}>
-                <p> {email} </p>
+                <BioSection
+                  name={JSON.stringify(name).substring(
+                    1,
+                    JSON.stringify(name).length - 1
+                  )}
+                />
                 <br />
                 <br />
                 <br />
@@ -92,8 +105,8 @@ function ProfilePage() {
                 <legend style={customStyles.dangerText}> Danger Zone </legend>
                 <br />
                 <br />
-                <UserForm type="username" content={name} />
-                <UserForm type="bio" content={email} />
+                <UserForm type="username" name={name} />
+                <UserForm type="bio" name={name} />
                 <br />
                 <br />
               </fieldset>

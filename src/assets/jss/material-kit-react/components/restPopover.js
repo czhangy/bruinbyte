@@ -6,7 +6,7 @@ import Popover from "@material-ui/core/Popover";
 import Button from "@material-ui/core/Button";
 
 // Custom Components
-import CommentCard from "../../../../components/CommentBox/CommentCard.js";
+import RestaurantCard from "components/RestaurantCard/RestaurantCard.js";
 
 export default function RestPopover(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -53,7 +53,7 @@ export default function RestPopover(props) {
           horizontal: "center",
         }}
       >
-        <CommentCard restaurant={props.restaurant} />
+        <RestaurantCard restaurant={props.restaurant} />
       </Popover>
     </div>
   );

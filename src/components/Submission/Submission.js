@@ -8,7 +8,7 @@ import GridItem from "components/Grid/GridItem.js";
 import Typography from "@material-ui/core/Typography";
 
 // Custom Components
-import TextFieldFunc from "components/CommentBox/TextFieldFunc.js";
+import ReviewField from "assets/jss/material-kit-react/components/reviewField.js";
 import Ratings from "components/Ratings/Ratings.js";
 
 // Firestore
@@ -65,12 +65,21 @@ export default class Submission extends React.Component {
   }
 
   handleWrite() {
-    addStarRating(this.state.username, this.props.restaurant, this.state.stars);
-    addReview(this.state.username, this.props.restaurant, this.state.text);
-    alert("written");
-    this.setState({
-      status: 1,
-    });
+    if (this.state.stars == -1) {
+      alert("You must add a star rating!");
+    } else if (this.state.text == "") {
+      alert("You must add a review!");
+    } else {
+      addStarRating(
+        this.state.username,
+        this.props.restaurant,
+        this.state.stars
+      );
+      addReview(this.state.username, this.props.restaurant, this.state.text);
+      this.setState({
+        status: 1,
+      });
+    }
   }
 
   render() {
@@ -88,7 +97,7 @@ export default class Submission extends React.Component {
           </GridItem>
           <GridItem xs={12}>
             <br />
-            <TextFieldFunc
+            <ReviewField
               update={this.changeComment}
               getUser={this.getUsername}
             />

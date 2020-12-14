@@ -12,7 +12,7 @@ import Submission from "components/Submission/Submission.js";
 // Auth0
 import { useAuth0 } from "@auth0/auth0-react";
 
-export default function SimplePopover(props) {
+export default function AddReviewCard(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { loginWithRedirect } = useAuth0();
   const { isAuthenticated } = useAuth0();
@@ -75,7 +75,7 @@ export default function SimplePopover(props) {
   );
 }
 
-SimplePopover.propTypes = {
+AddReviewCard.propTypes = {
   restaurant: PropTypes.oneOf([
     "california-pizza-kitchen",
     "cava",
