@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -69,7 +68,7 @@ export default function AddReviewCard(props) {
       >
         <br />
         <br />
-        <Submission restaurant = {props.restaurant}/>
+        <Submission restaurant={props.restaurant} />
       </Popover>
     </div>
   );
