@@ -191,7 +191,7 @@ export const getArrayOfReviewsFromUser = async(username) => {
 // Use this as a "Is this display name taken?" checker
 export const userExists = async(display_name) => {
   return (await firebase.firestore().collection("users").where("display_name", "==", display_name).get())
-    .size == 0;
+    .size != 0;
 }
 
 // Returns undefined if user doesn't have display name
