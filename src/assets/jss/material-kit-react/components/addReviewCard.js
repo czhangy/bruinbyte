@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // Core Components
-import Popover from "@material-ui/core/Popover";
 import Button from "@material-ui/core/Button";
+import Popover from "@material-ui/core/Popover";
 
 // Custom Components
 import Submission from "components/Submission/Submission.js";
@@ -12,18 +12,22 @@ import Submission from "components/Submission/Submission.js";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export default function AddReviewCard(props) {
+  // Setup states for popover
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  // Enforce user authentication
   const { loginWithRedirect } = useAuth0();
   const { isAuthenticated } = useAuth0();
-
   const handleClick = (event) => {
     isAuthenticated ? setAnchorEl(event.currentTarget) : loginWithRedirect();
   };
 
+  // Close popover
   const handleClose = () => {
     setAnchorEl(null);
   };
 
+  // Define CSS styles
   const customStyles = {
     buttonStyle: {
       backgroundColor: "#2774ae",
@@ -36,6 +40,7 @@ export default function AddReviewCard(props) {
     },
   };
 
+  // Popover variables
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
@@ -74,6 +79,7 @@ export default function AddReviewCard(props) {
   );
 }
 
+// Define props
 AddReviewCard.propTypes = {
   restaurant: PropTypes.oneOf([
     "california-pizza-kitchen",

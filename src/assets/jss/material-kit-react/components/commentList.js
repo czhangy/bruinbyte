@@ -13,10 +13,15 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import Popover from "@material-ui/core/Popover";
 
-// IMPORT FUNCTION FROM FIRESTORE.JS
+// Custom Components
+import UserInfo from "assets/jss/material-kit-react/components/userInfo.js";
+
+// Firebase
 import { getArrayOfReviews } from "database/firestore.js";
 
+// Make CSS styles
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -28,8 +33,25 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CommentList(props) {
+  // Get CSS styles
   const classes = useStyles();
 
+  // Setup states for popover
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  // Popover functions
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  // Popover variables
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
+
+  // Get arrays for promise handling
   let arrayOfReviewsPromise = getArrayOfReviews(props.establishment);
   const [comments, setComments] = useState([]);
 
@@ -43,13 +65,39 @@ export default function CommentList(props) {
   return (
     <div className={classes.root}>
       {comments.map((comment) => (
-        <ListItem button>
-          <ListItemIcon>
-            <FastfoodIcon />
-          </ListItemIcon>
-          <ListItemText primary={comment.user} secondary={comment.text} />
-          <Divider />
-        </ListItem>
+        <div>
+          <ListItem button aria-describedby={id} onClick={handleClick}>
+            {/* Icon */}
+            <ListItemIcon>
+              <FastfoodIcon />
+            </ListItemIcon>
+            {/* Actual comment */}
+            <ListItemText primary={comment.user} secondary={comment.text} />
+            <Divider />
+          </ListItem>
+          {/* User information */}
+          <Popover
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+            PaperProps={{
+              style: {
+                width: "40%",
+              },
+            }}
+          >
+            <UserInfo username={comment.user} />
+          </Popover>
+        </div>
       ))}
     </div>
   );
