@@ -53,7 +53,7 @@ export default function ReviewSection(props) {
             <FastfoodIcon />
           </ListItemIcon>
           {/* Actual comment */}
-          <ListItemText primary={comment.user} secondary={comment.text} />
+          <ListItemText primary={comment.establishment} secondary={comment.text} />
           <Divider />
         </ListItem>
       ))}

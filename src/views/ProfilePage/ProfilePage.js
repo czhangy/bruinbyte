@@ -23,6 +23,9 @@ import bg from "assets/img/landing-bg.jpg";
 // Auth0
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
+// Firebase
+import { createAccount } from "database/firestore.js";
+
 // Make CSS styles
 const useStyles = makeStyles(styles);
 
@@ -68,6 +71,9 @@ function ProfilePage() {
     1,
     JSON.stringify(name).length - 1
   );
+
+  // Create account if necessary
+  createAccount(curUser);
 
   return (
     <div>
