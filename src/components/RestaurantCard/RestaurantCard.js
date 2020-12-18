@@ -23,6 +23,7 @@ import CommentList from "assets/jss/material-kit-react/components/commentList.js
 import RatingsView from "assets/jss/material-kit-react/components/ratingsView.js";
 import DeliveryServices from "assets/jss/material-kit-react/components/deliveryServices.js";
 
+// Get CSS styles
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -53,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
     height: "5px",
   },
 }));
-
 const customStyles = {
   titleText: {
     fontWeight: "bold",
@@ -73,8 +73,10 @@ const customStyles = {
   cardStyle: { backgroundColor: "#003b5c", border: "5px solid #ffb81c" },
 };
 
+// Import Google Maps screenshot
 const mapFile = require.context("../../assets/img/maps/", true, /.png$/);
 
+// Vars
 let name = "";
 let address = "";
 let phoneNum = "";

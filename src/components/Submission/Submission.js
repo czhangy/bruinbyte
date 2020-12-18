@@ -8,8 +8,8 @@ import GridItem from "components/Grid/GridItem.js";
 import Typography from "@material-ui/core/Typography";
 
 // Custom Components
-import ReviewField from "assets/jss/material-kit-react/components/reviewField.js";
 import Ratings from "components/Ratings/Ratings.js";
+import ReviewField from "assets/jss/material-kit-react/components/reviewField.js";
 
 // Firestore
 import { addStarRating, addReview } from "database/firestore.js";
@@ -32,6 +32,7 @@ const customStyles = {
 };
 
 export default class Submission extends React.Component {
+  // Setup props and state for Firebase
   constructor(props) {
     super(props);
     this.state = {
@@ -46,30 +47,37 @@ export default class Submission extends React.Component {
     this.getUsername = this.getUsername.bind(this);
   }
 
+  // Change star rating value/display based on click
   changeRating(newRating) {
     this.setState({
       stars: newRating,
     });
   }
 
+  // Change comment value/display as the user types
   changeComment(newComment) {
     this.setState({
       text: newComment,
     });
   }
 
+  // Username handling
   getUsername(user) {
     this.setState({
       username: user,
     });
   }
 
+  // Attempt to save rating/review
   handleWrite() {
     if (this.state.stars == -1) {
+      // Check if user has provided a star rating
       alert("You must add a star rating!");
     } else if (this.state.text == "") {
+      // Check if user has provided a review
       alert("You must add a review!");
     } else {
+      // Write to database
       addStarRating(
         this.state.username,
         this.props.restaurant,
@@ -84,7 +92,7 @@ export default class Submission extends React.Component {
 
   render() {
     if (!this.state.status) {
-      // default
+      // Default window
       return (
         <GridContainer direction="row" justify="center" alignItems="center">
           <GridItem xs={5}>
@@ -92,9 +100,11 @@ export default class Submission extends React.Component {
               Rating:
             </Typography>
           </GridItem>
+          {/* Star rating component */}
           <GridItem xs={7}>
             <Ratings update={this.changeRating} />
           </GridItem>
+          {/* Review field component */}
           <GridItem xs={12}>
             <br />
             <ReviewField
@@ -102,6 +112,7 @@ export default class Submission extends React.Component {
               getUser={this.getUsername}
             />
           </GridItem>
+          {/* Submit button */}
           <GridItem xs={1}>
             <br />
             <Button
@@ -117,7 +128,7 @@ export default class Submission extends React.Component {
         </GridContainer>
       );
     } else if (this.state.status == 1) {
-      // rating just submitted
+      // Rating just submitted window
       return (
         <GridContainer direction="row" justify="center" alignItems="center">
           <GridItem xs={12}>

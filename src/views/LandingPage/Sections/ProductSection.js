@@ -9,21 +9,24 @@ import Divider from "@material-ui/core/Divider";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 
+// Make CSS styles
 const useStyles = makeStyles(styles);
 
-const customStyles = {
-  smallText: {
-    fontWeight: "bold",
-    fontSize: "1.5vw",
-    color: "#000000",
-  },
-  bigText: { fontWeight: "bold", fontSize: "2.5vw", color: "#000000" },
-};
-
 export default function ProductSection() {
+  // Get CSS styles
   const classes = useStyles();
+  const customStyles = {
+    smallText: {
+      fontWeight: "bold",
+      fontSize: "1.5vw",
+      color: "#000000",
+    },
+    bigText: { fontWeight: "bold", fontSize: "2.5vw", color: "#000000" },
+  };
+
   return (
     <div className={classes.section}>
+      {/* About us section */}
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>About BruinByte</h2>

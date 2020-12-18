@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 // Core Components
-import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
+import TextField from "@material-ui/core/TextField";
 
 // Firestore
-import { createBio, createDisplayName } from "database/firestore.js";
+import {
+  setUserBio,
+  setUserDisplayName,
+  userExists,
+} from "database/firestore.js";
 
 export default function UserForm(props) {
   // Get fields
@@ -22,11 +26,17 @@ export default function UserForm(props) {
     1,
     JSON.stringify(props.name).length - 1
   );
+
   // Update fields
   const [value, setValue] = useState("");
+  const [nameExists, checkName] = useState(true);
   const handleChange = (e) => {
     setValue(e.target.value);
+    userExists(value).then((exists) => {
+      checkName(exists);
+    });
   };
+
   // Button CSS
   const styles = {
     buttonStyle: {
@@ -40,11 +50,19 @@ export default function UserForm(props) {
     <Button
       variant="contained"
       style={styles.buttonStyle}
-      onClick={() =>
-        props.type == "username"
-          ? createDisplayName(username, value)
-          : createBio(username, value)
-      }
+      onClick={() => {
+        if (props.type == "username") {
+          if (nameExists) {
+            alert("That name is already taken, please select a new one");
+          } else {
+            setUserDisplayName(username, value);
+            alert("Username changed!");
+          }
+        } else {
+          setUserBio(username, value);
+          alert("Bio changed!");
+        }
+      }}
     >
       Save!
     </Button>

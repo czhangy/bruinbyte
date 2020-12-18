@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // Firebase
 import { getUserDisplayName } from "database/firestore.js";
 
-// Stylize
+// Get CSS styles
 const customStyles = {
   nameText: {
     fontSize: "2vw",
@@ -12,6 +12,7 @@ const customStyles = {
 };
 
 export default class NameSection extends React.Component {
+  // Set up props and state for Firebase functions
   constructor(props) {
     super(props);
     this.state = {
