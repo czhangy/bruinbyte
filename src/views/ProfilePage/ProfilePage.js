@@ -32,11 +32,6 @@ const useStyles = makeStyles(styles);
 function ProfilePage() {
   // Get CSS styles
   const classes = useStyles();
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
   const customStyles = {
     bgImage: {
       backgroundImage: "url(" + bg + ")",
@@ -64,7 +59,7 @@ function ProfilePage() {
 
   // Get Auth0 objects
   const { user } = useAuth0();
-  const { picture, name } = user;
+  const { name } = user;
 
   // Stringify user object for prop passing
   const curUser = JSON.stringify(name).substring(
@@ -97,10 +92,13 @@ function ProfilePage() {
               {/* User's profile picture and display name */}
               <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={6}>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                   <div className={classes.profile}>
-                    <div>
-                      <img src={picture} alt="..." className={imageClasses} />
-                    </div>
                     <div className={classes.name}>
                       <h3 className={classes.title}>
                         <NameSection name={curUser} />
@@ -111,6 +109,7 @@ function ProfilePage() {
               </GridContainer>
               {/* User's bio */}
               <div className={classes.description}>
+                <br />
                 <BioSection name={curUser} />
                 <br />
                 <br />

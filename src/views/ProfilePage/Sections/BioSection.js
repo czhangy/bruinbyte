@@ -27,7 +27,7 @@ export default class BioSection extends React.Component {
         this.setState({ bio: value });
       })
       .catch(() => {
-        this.setState({ bio: "n/a please enter bio" });
+        this.setState({ bio: "No bio found, make one below!" });
       });
   }
 

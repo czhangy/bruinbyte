@@ -38,16 +38,13 @@ export default function CommentList(props) {
 
   // Setup states for popover
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [openedId, setId] = React.useState(null);
 
   // Popover functions
   const handleClick = (event, popoverId) => {
     setAnchorEl(event.currentTarget);
-    setId(popoverId);
   };
   const handleClose = () => {
     setAnchorEl(null);
-    setId(null);
   };
 
   // Popover variables

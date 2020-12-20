@@ -333,6 +333,7 @@ export default function RestaurantCard(props) {
   );
 }
 
+// Define props
 RestaurantCard.propTypes = {
   restaurant: PropTypes.oneOf([
     "california-pizza-kitchen",

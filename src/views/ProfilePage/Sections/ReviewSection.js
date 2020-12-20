@@ -29,6 +29,44 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Extract restaurant name
+function getAlias(restaurant) {
+    switch (restaurant) {
+        case "in-n-out":
+            return "In-N-Out";
+        case "cava":
+            return "CAVA";
+        case "mr-rice":
+            return "Mr. Rice";
+        case "taco-bell":
+            return "Taco Bell";
+        case "tlt":
+            return "TLT";
+        case "california-pizza-kitchen":
+            return "CPK";
+        case "corner-bakery":
+            return "Corner Bakery";
+        case "fat-sals":
+            return "Fat Sal's";
+        case "hangry-moons":
+            return "Hangry Moon's";
+        case "house-of-meatballs":
+            return "House of Meatballs";
+        case "gushi":
+            return "Gushi";
+        case "fellow":
+            return "Fellow";
+        case "enzos":
+            return "Enzo's Pizzeria";
+        case "tender-greens":
+            "Tender Greens";
+        case "chick-fil-a":
+            return "Chick-fil-A";
+        default:
+            return "Error: Restuarant not found!";
+    }
+}
+
 export default function ReviewSection(props) {
   // Get CSS styles
   const classes = useStyles();
@@ -54,7 +92,7 @@ export default function ReviewSection(props) {
           </ListItemIcon>
           {/* Actual comment */}
           <ListItemText
-            primary={("" + comment.establishment).toUpperCase()}
+            primary={getAlias("" + comment.establishment)}
             secondary={comment.text}
           />
           <Divider />

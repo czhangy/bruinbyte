@@ -20,9 +20,11 @@ import kAfzali from "assets/img/faces/kiaAfzali.png";
 import vDelk from "assets/img/faces/vickyDelk.PNG";
 import bRoysar from "assets/img/faces/brianRoysar.jpg";
 
+// Make CSS styles
 const useStyles = makeStyles(styles);
 
 export default function TeamSection() {
+  // Get CSS styles
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
@@ -30,6 +32,7 @@ export default function TeamSection() {
     classes.imgFluid
   );
   return (
+    // Title
     <div className={classes.section}>
       <h2 className={classes.title} style={{ textDecoration: "underline" }}>
         Our team
@@ -37,6 +40,7 @@ export default function TeamSection() {
       <br />
       <div>
         <GridContainer>
+          {/* Vicky Card */}
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
@@ -55,7 +59,8 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   href="https://www.instagram.com/vickydelk/"
-                  target="_blank">
+                  target="_blank"
+                >
                   <i className={classes.socials + " fab fa-instagram"} />
                 </Button>
                 <Button
@@ -63,12 +68,14 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   href="https://www.linkedin.com/in/victoriadelk/"
-                  target="_blank">
+                  target="_blank"
+                >
                   <i className={classes.socials + " fab fa-linkedin"} />
                 </Button>
               </CardFooter>
             </Card>
           </GridItem>
+          {/* Charles Card */}
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
@@ -87,7 +94,8 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   target="_blank"
-                  href="https://www.instagram.com/c.zhangg/">
+                  href="https://www.instagram.com/c.zhangg/"
+                >
                   <i className={classes.socials + " fab fa-instagram"} />
                 </Button>
                 <Button
@@ -95,7 +103,8 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   href="https://www.linkedin.com/in/charles-zhang-14746519b/"
-                  target="_blank">
+                  target="_blank"
+                >
                   <i className={classes.socials + " fab fa-linkedin"} />
                 </Button>
                 <Button
@@ -103,12 +112,14 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   href="https://github.com/czhangy"
-                  target="_blank">
+                  target="_blank"
+                >
                   <i className={classes.socials + " fab fa-github"} />
                 </Button>
               </CardFooter>
             </Card>
           </GridItem>
+          {/* Kia Card */}
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
@@ -127,7 +138,8 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   target="_blank"
-                  href="https://www.instagram.com/kia.afzali/">
+                  href="https://www.instagram.com/kia.afzali/"
+                >
                   <i className={classes.socials + " fab fa-instagram"} />
                 </Button>
                 <Button
@@ -135,12 +147,14 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   href="https://www.linkedin.com/in/kia-afzali-189785156/"
-                  target="_blank">
+                  target="_blank"
+                >
                   <i className={classes.socials + " fab fa-linkedin"} />
                 </Button>
               </CardFooter>
             </Card>
           </GridItem>
+          {/* Danny Card */}
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
@@ -151,28 +165,9 @@ export default function TeamSection() {
                 <br />
                 <small className={classes.smallTitle}>Back-End Developer</small>
               </h4>
-              <CardFooter className={classes.justifyCenter}>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}>
-                  <i className={classes.socials + " fab fa-twitter"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}>
-                  <i className={classes.socials + " fab fa-instagram"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}>
-                  <i className={classes.socials + " fab fa-facebook"} />
-                </Button>
-              </CardFooter>
             </Card>
           </GridItem>
+          {/* Brian Card */}
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
@@ -188,24 +183,14 @@ export default function TeamSection() {
                   justIcon
                   color="transparent"
                   className={classes.margin5}
-                  href="https://www.linkedin.com/in/brianroysar">
+                  href="https://www.linkedin.com/in/brianroysar"
+                >
                   <i className={classes.socials + " fab fa-linkedin"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}>
-                  <i className={classes.socials + " fab fa-instagram"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}>
-                  <i className={classes.socials + " fab fa-facebook"} />
                 </Button>
               </CardFooter>
             </Card>
           </GridItem>
+          {/* Mascot Card */}
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
@@ -222,7 +207,8 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   href="https://twitter.com/gojoebruinucla"
-                  target="_blank">
+                  target="_blank"
+                >
                   <i className={classes.socials + " fab fa-twitter"} />
                 </Button>
                 <Button
@@ -230,7 +216,8 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   href="https://www.instagram.com/uclajoebruin/"
-                  target="_blank">
+                  target="_blank"
+                >
                   <i className={classes.socials + " fab fa-instagram"} />
                 </Button>
                 <Button
@@ -238,7 +225,8 @@ export default function TeamSection() {
                   color="transparent"
                   className={classes.margin5}
                   href="https://www.facebook.com/Joe.Bruin/"
-                  target="_blank">
+                  target="_blank"
+                >
                   <i className={classes.socials + " fab fa-facebook"} />
                 </Button>
               </CardFooter>

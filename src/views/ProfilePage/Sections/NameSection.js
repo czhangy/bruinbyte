@@ -28,7 +28,7 @@ export default class NameSection extends React.Component {
         this.setState({ displayName: value });
       })
       .catch(() => {
-        this.setState({ displayName: "n/a: please create a display name" });
+        this.setState({ displayName: this.props.name });
       });
   }
 
