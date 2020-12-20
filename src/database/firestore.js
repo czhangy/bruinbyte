@@ -134,7 +134,7 @@ export const createAccount = async (username) => {
     docRef.set({
       bio: "",
       display_name: username,
-    })
+    });
   }
 };
 
@@ -244,4 +244,12 @@ export const setUserDisplayName = async (username, display_name) => {
     },
     { merge: true }
   );
+};
+
+// Create new account
+export const createNewUser = (username) => {
+  firebase.firestore().collection("users").doc(username).set({
+    display_name: username,
+    bio: "",
+  });
 };
