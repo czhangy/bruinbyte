@@ -23,9 +23,13 @@ export default class NameSection extends React.Component {
 
   // Set state from database data
   componentDidMount() {
-    getUserDisplayName(this.props.name).then((value) => {
-      this.setState({ displayName: value });
-    });
+    getUserDisplayName(this.props.name)
+      .then((value) => {
+        this.setState({ displayName: value });
+      })
+      .catch(() => {
+        this.setState({ displayName: "n/a: please create a display name" });
+      });
   }
 
   // Return display name if it exists, otherwise use username
