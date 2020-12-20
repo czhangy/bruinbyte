@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 
 // @material-ui
@@ -116,8 +117,7 @@ export default function PrimarySearchAppBar() {
       keepMounted
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
+      onClose={handleMenuClose}>
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
@@ -132,8 +132,7 @@ export default function PrimarySearchAppBar() {
       keepMounted
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+      onClose={handleMobileMenuClose}>
       <MenuItem>
         <p>Messages</p>
       </MenuItem>
@@ -150,8 +149,7 @@ export default function PrimarySearchAppBar() {
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="inherit"
-        >
+          color="inherit">
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
@@ -166,8 +164,7 @@ export default function PrimarySearchAppBar() {
           backgroundColor: "#003B5C",
           color: "#FFD100",
         }}
-        position="static"
-      >
+        position="static">
         <Toolbar>
           <Typography style={{ marginLeft: -10, marginRight: 2 }}>
             <a href="/">

@@ -25,9 +25,17 @@ import logo from "../../assets/img/logo.png";
 // Make CSS styles
 const useStyles = makeStyles(styles);
 
+// AUTH0
+import { useAuth0 } from "@auth0/auth0-react";
+
+// Firebase stuff
+import { confirmUserExists } from "../../database/firestore.js";
+
 export default function LandingPage() {
   // Get CSS styles
   const classes = useStyles();
+  // Get user info
+  const { user } = useAuth0();
   const customStyles = {
     bgImage: {
       backgroundImage: "url(" + bg + ")",
@@ -87,7 +95,10 @@ export default function LandingPage() {
                 size="lg"
                 href="/search"
                 rel="noopener noreferrer"
-                style={customStyles.buttonStyle}>
+                style={customStyles.buttonStyle}
+                onClick={() => {
+                  confirmUserExists(user.email);
+                }}>
                 Find your next meal!
               </Button>
               <br />
