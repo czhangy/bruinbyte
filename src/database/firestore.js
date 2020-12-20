@@ -76,6 +76,7 @@ export const addReview = (user, establishment, review) => {
     .add({
       date_created: dateCreated,
       text: review,
+      establishment: establishment,
     })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
