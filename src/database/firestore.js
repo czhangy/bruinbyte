@@ -254,11 +254,11 @@ export const setUserDisplayName = async (username, display_name) => {
 // new document in the database for that user.
 export const confirmUserExists = async (username) => {
   var firestore = firebase.firestore();
-  // console.log("MADDDDEEE ITTT");
-  // console.log(firestore.collection("users"));
-  // console.log("----------------------------");
-  firestore.collection("users").doc(username).set({
-    display_name: username,
-    bio: "",
-  });
+  firestore.collection("users").doc(username).set(
+    {
+      display_name: username,
+      bio: "",
+    },
+    { mergeFields: [] }
+  );
 };
