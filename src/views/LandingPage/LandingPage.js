@@ -35,7 +35,6 @@ export default function LandingPage() {
   // Get CSS styles
   const classes = useStyles();
   // Get user info
-  const { user } = useAuth0();
   const customStyles = {
     bgImage: {
       backgroundImage: "url(" + bg + ")",
@@ -95,10 +94,7 @@ export default function LandingPage() {
                 size="lg"
                 href="/search"
                 rel="noopener noreferrer"
-                style={customStyles.buttonStyle}
-                onClick={() => {
-                  confirmUserExists(user.email);
-                }}>
+                style={customStyles.buttonStyle}>
                 Find your next meal!
               </Button>
               <br />

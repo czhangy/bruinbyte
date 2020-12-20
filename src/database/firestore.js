@@ -251,14 +251,12 @@ export const setUserDisplayName = async (username, display_name) => {
 // extra happens. If the user is a new user (i.e.) does not
 // have a profile in the database, this function will make a
 // new document in the database for that user.
-// NOTE: we will be using email as a unique identifier for a user
-// since only one account can be tied to an email
-export const confirmUserExists = async (email) => {
+export const confirmUserExists = async (username) => {
   var firestore = firebase.firestore();
-  console.log("MADDDDEEE ITTT");
+  // console.log("MADDDDEEE ITTT");
   // console.log(firestore.collection("users"));
   // console.log("----------------------------");
-  firestore.collection("users").doc(email).set({
+  firestore.collection("users").doc(username).set({
     display_name: username,
     bio: "",
   });

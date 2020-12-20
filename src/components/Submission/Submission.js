@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -13,6 +14,12 @@ import ReviewField from "assets/jss/material-kit-react/components/reviewField.js
 
 // Firestore
 import { addStarRating, addReview } from "database/firestore.js";
+
+// AUTH0
+import { useAuth0 } from "@auth0/auth0-react";
+
+// Firebase stuff
+import { confirmUserExists } from "../../database/firestore.js";
 
 const customStyles = {
   text: {
@@ -77,6 +84,8 @@ export default class Submission extends React.Component {
       // Check if user has provided a review
       alert("You must add a review!");
     } else {
+      // New user check/handling
+      confirmUserExists(this.state.username);
       // Write to database
       addStarRating(
         this.state.username,
@@ -118,8 +127,7 @@ export default class Submission extends React.Component {
             <Button
               variant="contained"
               style={customStyles.buttonStyle}
-              onClick={() => this.handleWrite()}
-            >
+              onClick={() => this.handleWrite()}>
               Submit!
             </Button>
             <br />
