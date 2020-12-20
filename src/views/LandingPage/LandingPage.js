@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 
 // @material-ui
@@ -86,8 +87,7 @@ export default function LandingPage() {
                 size="lg"
                 href="/search"
                 rel="noopener noreferrer"
-                style={customStyles.buttonStyle}
-              >
+                style={customStyles.buttonStyle}>
                 Find your next meal!
               </Button>
               <br />
@@ -104,7 +104,11 @@ export default function LandingPage() {
             </GridItem>
             {/* Logo */}
             <GridItem xs={6} sm={6} md={6}>
-              <img src={logo} alt = "BruinByte logo" style={customStyles.logoStyle} />
+              <img
+                src={logo}
+                alt="BruinByte logo"
+                style={customStyles.logoStyle}
+              />
             </GridItem>
           </GridContainer>
         </div>
