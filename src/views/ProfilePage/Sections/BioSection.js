@@ -22,11 +22,13 @@ export default class BioSection extends React.Component {
 
   // Set state based on database access
   componentDidMount() {
-    if (this.state.bio != "") {
-      getUserBio(this.props.name).then((value) => {
+    getUserBio(this.props.name)
+      .then((value) => {
         this.setState({ bio: value });
+      })
+      .catch(() => {
+        this.setState({ bio: "n/a please enter bio" });
       });
-    }
   }
 
   // Return bio, even if blank
