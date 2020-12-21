@@ -19,6 +19,7 @@ import cZhang from "assets/img/faces/charlesZhang.JPG";
 import kAfzali from "assets/img/faces/kiaAfzali.png";
 import vDelk from "assets/img/faces/vickyDelk.PNG";
 import bRoysar from "assets/img/faces/brianRoysar.jpg";
+import dChoi from "assets/img/faces/dannyChoi.png";
 
 // Make CSS styles
 const useStyles = makeStyles(styles);
@@ -158,7 +159,7 @@ export default function TeamSection() {
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
               <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={base} alt="..." className={imageClasses} />
+                <img src={dChoi} alt="..." className={imageClasses} />
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Danny Choi
