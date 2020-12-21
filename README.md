@@ -94,5 +94,3 @@ Link: https://bruinbyte.netlify.app/
         │   └── Sections
         └── SearchPage
 ```
-
-#what's up
